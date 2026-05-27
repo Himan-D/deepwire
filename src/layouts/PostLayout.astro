@@ -1,0 +1,222 @@
+---
+import siteConfig from "@/site.config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { type Post, getPostUrl, getPostSlug, getAllPosts, getRelatedPosts } from "@/utils/content";
+import { calculateReadingTime, slugify } from "@/utils/text";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import SharePost from "@/components/content/SharePost.astro";
+import SEO from "@/components/SEO.astro";
+import PostFeed from "@/components/content/PostFeed.astro";
+import PostNavigation from "@/components/content/PostNavigation.astro";
+import { generatePostSchema } from "@/utils/schema";
+
+type Props = {
+  post: Post;
+  prevPost?: Post | null;
+  nextPost?: Post | null;
+};
+
+const {
+  post,
+  prevPost,
+  nextPost,
+} = Astro.props;
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+}
+
+function formatMonthYear(date: Date) {
+  return new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "long",
+  })
+    .format(date)
+    .toUpperCase();
+}
+
+const allPosts    = await getAllPosts();
+const relatedPosts = getRelatedPosts(post, allPosts, siteConfig.relatedPosts);
+const publishedDate = formatDate( post.data.published);
+
+const updatedDate = post.data.updated
+  ? formatDate(post.data.updated)
+  : null;
+
+const section = post.data.category ?? "Posts";
+const readTime    = calculateReadingTime(post.body ?? "").text;
+const showReadingTime = siteConfig.showReadingTime || false;
+
+const { title, description, cover, published, updated, tags } = post.data;
+
+const ogImage = `/og/posts/${getPostSlug(post.id, post.filePath)}.png`;
+
+const structuredData = generatePostSchema(post);
+---
+
+<BaseLayout schema={structuredData}>
+  <SEO
+    slot="seo"
+    {title}
+    description={description ?? ""}
+    type="article"
+    publishedTime={published}
+    {tags}
+    {ogImage}
+  />
+  <Fragment slot="header">
+    <Breadcrumb />
+    <!-- Post Header -->
+    <header class="space-y-4">
+      <!-- Context -->
+      <div class="text-muted-foreground flex flex-wrap items-center gap-3 text-xs font-medium tracking-[0.2em] uppercase mb-6 sm:mb-8">
+        <span>{section}</span>
+
+        <span aria-hidden="true">·</span>
+
+        <span>
+          {formatDate(
+            post.data.published
+          )}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <div class="space-y-4">
+        <h1 
+          class="font-content text-foreground text-4xl leading-[1.05] font-semibold tracking-tight md:text-5xl"
+          transition:name={slugify(post.data.title.replaceAll(".", "-"))}
+        >
+          {post.data.title}
+        </h1>
+
+        {
+          post.data.description && (
+            <p class="text-muted-foreground max-w-2xl text-lg leading-relaxed">
+              {post.data.description}
+            </p>
+          )
+        }
+      </div>
+
+      <!-- Metadata -->
+      <div class="text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-2 mt-8 text-sm italic">
+        <span>
+          By {post.data.author ?? `${siteConfig.author}`}
+        </span>
+
+        <span aria-hidden="true">·</span>
+
+        <time datetime={post.data.published.toISOString()}>
+          {publishedDate}
+        </time>
+
+        {
+          updatedDate && (
+            <>
+              <span aria-hidden="true">
+                ·
+              </span>
+
+              <span>
+                Updated {updatedDate}
+              </span>
+            </>
+          )
+        }
+
+        {
+          showReadingTime && (
+            <>
+              <span aria-hidden="true">
+                ·
+              </span>
+              <span>
+                {readTime}
+              </span>
+            </>
+          )
+        }
+      </div>
+
+      <!-- Tags -->
+      {
+        post.data.tags &&
+          post.data.tags.length > 0 && (
+            <div class="text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-code tracking-wide">
+              {post.data.tags.map(
+                (tag, index) => (
+                  <>
+                    {index > 0 && (
+                      <span aria-hidden="true">
+                        ·
+                      </span>
+                    )}
+
+                    <span>{tag}</span>
+                  </>
+                )
+              )}
+            </div>
+          )
+      }
+
+      <!-- Cover -->
+      {
+        post.data.cover && (
+          <div class="overflow-hidden rounded-2xl pt-4">
+            <img
+              src={
+                typeof post.data.cover ===
+                "string"
+                  ? post.data.cover
+                  : post.data.cover.src
+              }
+              alt={post.data.title}
+              class="border-border/50 aspect-3/2 w-full border object-cover"
+            />
+          </div>
+        )
+      }
+      <div class="divider" />
+    </header>
+  </Fragment>
+
+  <aside data-pagefind-body>
+    <meta data-pagefind-meta="title[content]" content={title} />
+    <meta data-pagefind-sort="date[content]" content={published.toISOString()} />
+    <meta data-pagefind-filter="collection[content]" content={post.collection} />
+    {tags?.map((tag) => (
+      <meta data-pagefind-filter="tag[content]" content={tag} />
+    ))}
+    <!-- Content -->
+    <div class="app-prose post-content" role="article">
+      <slot />
+    </div>
+
+    <section>
+      <SharePost title={post.data.title} />
+      <div class="divider" />
+    </section>
+  </aside>
+
+  <Fragment slot="navigation">
+    <PostNavigation
+      prevPost={prevPost}
+      nextPost={nextPost}
+    />
+  </Fragment>
+  <Fragment slot="after">
+    {relatedPosts.length > 0 && (
+      <PostFeed
+        posts={relatedPosts}
+        variant="archive"
+        sectionTitle="Related"
+      />
+    )}
+  </Fragment>
+</BaseLayout>

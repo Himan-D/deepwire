@@ -1,0 +1,78 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import SEO from "@/components/SEO.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import { type Page, type Post } from "@/utils/content";
+
+interface Props {
+  entry?: Page | Post;
+  title?: string;
+  description?: string;
+  showBreadcrumb?: boolean;
+  transitionName?: string;
+  noindex?: boolean;
+  schema?: Record<string, unknown>;
+}
+
+const {
+  entry,
+  title: propTitle,
+  description: propDescription,
+  showBreadcrumb = true,
+  transitionName,
+  noindex = false,
+  schema
+} = Astro.props;
+
+const {
+  title: entryTitle,
+  description: entryDescription,
+  published,
+  updated,
+} = entry?.data ?? {};
+
+const title =
+  propTitle ??
+  entryTitle;
+
+const description =
+  propDescription ??
+  entryDescription;
+
+const last = updated ? updated : published;
+
+const formattedDate = last?.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+});
+
+const ogImage = entry
+  ? `/og/${entry.id}.png`
+  : undefined;
+
+---
+<BaseLayout schema={schema}>
+  <SEO
+    slot="seo"
+    title={title}
+    description={description ?? ""}
+    ogImage={ogImage}
+    {noindex}
+  />
+  <Fragment slot="header">
+    {showBreadcrumb && <Breadcrumb />}
+    <PageHeader {title} subheading={description} transitionName={transitionName} >
+      {formattedDate && (
+        <div slot="meta">
+          <span class="text-muted-foreground text-sm font-code">Updated {formattedDate}</span>
+        </div>
+      )}
+    </PageHeader>
+  </Fragment>
+  <section data-pagefind-body class="my-8">
+    <meta data-pagefind-filter="collection[content]" content="page" />
+    <meta data-pagefind-sort="date[content]" content={formattedDate} />
+    <slot />
+  </section>
+</BaseLayout>

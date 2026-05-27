@@ -1,0 +1,62 @@
+---
+import { type Post, getPostUrl } from "@/utils/content";
+import ArrowLeft from "@/assets/arrow-left.svg";
+import ArrowRight from "@/assets/arrow-right.svg";
+
+interface Props {
+  prevPost?: Post;
+  nextPost?: Post;
+}
+
+const { prevPost, nextPost } = Astro.props;
+---
+<section class="flex flex-col space-x-4">
+  <nav class="post-navigation py-4 " aria-label="Post navigation">
+    {/* GLOBAL PREV / NEXT */}
+    {(prevPost || nextPost) && (
+      <div class:list={[
+          "post-nav flex flex-col md:flex-row gap-4 text-sm",
+          {
+            "md:justify-between": !(prevPost && nextPost),
+          }
+        ]}>
+          {prevPost && (
+            <a
+              href={getPostUrl(
+                  prevPost.id,
+                  prevPost.filePath
+                )}
+              class="group card flex flex-1 flex-col gap-1 no-underline"
+            >
+              <div class="flex gap-2 items-center justify-start text-muted-foreground text-xs font-ui font-medium tracking-wide uppercase">
+                <ArrowLeft class="size-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
+                <span class="text-minimal">Previous</span>
+              </div>
+              <span class="text-foreground text-xl animate">
+                {prevPost.data.title}
+              </span>
+            </a>
+          )}
+
+          {nextPost && (
+            <a
+              href={getPostUrl(
+                  nextPost.id,
+                  nextPost.filePath
+                )}
+              class="group card flex flex-1 flex-col gap-1 text-right no-underline"
+            >
+              <div class="flex gap-2 items-center justify-end text-muted-foreground text-xs font-ui font-medium tracking-wide uppercase">
+                <span class="text-minimal">Next</span>
+                <ArrowRight class="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              </div>
+              <span class="text-foreground text-xl animate">
+                {nextPost.data.title}
+              </span>
+            </a>
+          )}
+      </div>
+    )}
+  </nav>
+  <div class="divider" />
+</section>

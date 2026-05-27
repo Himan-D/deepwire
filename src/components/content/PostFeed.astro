@@ -1,0 +1,183 @@
+---
+import { type Post, getPostUrl, getPostsGroupedByYear } from "@/utils/content";
+import { slugify } from "@/utils/text";
+import SectionHeader from "@/components/SectionHeader.astro";
+
+export type PostFeedVariant =
+  | "list"
+  | "timeline"
+  | "archive";
+
+type Props = {
+  posts: Post[];
+  variant?: PostFeedVariant;
+  sectionTitle?: string;
+  sectionDesc?: string;
+};
+
+const {
+  posts,
+  variant = "compact",
+  sectionTitle,
+  sectionDesc,
+} = Astro.props;
+
+function formatTimelineDate(date: Date) {
+  return new Intl.DateTimeFormat("en", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  })
+    .format(date)
+    .toUpperCase();
+}
+
+function formatArchiveDate(date: Date) {
+  return new Intl.DateTimeFormat("en", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  })
+    .format(date)
+    .toUpperCase();
+}
+
+---
+<section>
+  <SectionHeader
+    title={sectionTitle}
+    subheading={sectionDesc}
+  />
+  {
+  variant === "archive" ? (
+    <div class="space-y-12">
+      <ul class="space-y-2">
+        {posts.map((post) => (
+          <li>
+            <a
+              href={getPostUrl(
+                post.id,
+                post.filePath
+              )}
+              class="group flex items-baseline gap-8 py-1"
+            >
+              <time
+                datetime={post.data.published.toISOString()}
+                class="text-muted-foreground shrink-0 text-sm font-code uppercase tabular-nums"
+              >
+                {formatArchiveDate(
+                  post.data.updated ??
+                    post.data.published
+                )}
+              </time>
+
+              <span
+                class="group-hover:text-accent transition-colors"
+                transition:name={slugify(post.data.title.replaceAll(".","-"))}
+              >
+                {post.data.title}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <div class="timeline">
+      {posts.map((post) => (
+        <article class="group contents">
+          {/* Rail */}
+          <div class="relative text-left">
+            <time
+              datetime={post.data.published.toISOString()}
+              class="text-muted-foreground block pt-0.5 sm:pt-1 text-sm font-code uppercase tracking-tighter tabular-nums"
+            >
+              {formatTimelineDate(
+                post.data.updated ??
+                  post.data.published
+              )}
+            </time>
+
+            <span
+              class="border-border bg-muted group-hover:bg-accent absolute top-2.5 -right-5 h-2 w-2 rounded-full border"
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* Content */}
+          <div class="space-y-2 pb-10 sm:pl-4">
+            <h2 class="font-content text-2xl leading-tight tracking-tight">
+              <a
+                href={getPostUrl(post.id, post.filePath)}
+                class="group-hover:text-accent transition-colors"
+                transition:name={slugify(post.data.title.replaceAll(".", "-"))}
+              >
+                {post.data.title}
+              </a>
+            </h2>
+
+            {
+              post.data.description && (
+                <p class="text-muted-foreground max-w-2xl text-md leading-relaxed">
+                  {post.data.description}
+                </p>
+              )
+            }
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}
+</section>
+
+<style>
+
+  @reference  "../../styles/global.css";
+  
+  @media (min-width: 768px) {
+    .timeline {
+      display: grid;
+      grid-template-columns: 6rem 1fr;
+      column-gap: 2rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7rem;
+      width: 1px;
+      background: var(--border);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .timeline {
+      @apply relative space-y-10 ps-6;
+    }
+
+    .timeline::before {
+      content: "";
+      @apply bg-border absolute top-0 bottom-0 left-0 w-px;
+    }
+
+    .timeline article {
+      @apply relative;
+    }
+
+    .timeline article > div:first-child {
+      @apply relative mb-2 text-left pe-0;
+    }
+
+    .timeline article > div:first-child span {
+      @apply -left-7 top-1.5 right-auto;
+    }
+
+    .timeline article > div:last-child h2 {
+      @apply text-2xl;
+    }
+  }
+</style>

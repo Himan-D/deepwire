@@ -1,0 +1,18 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import PostFeed from "@/components/content/PostFeed.astro";
+import { getAllPosts } from "@/utils/content";
+
+const allPosts = await getAllPosts();
+---
+
+<PageLayout
+  title="Archive"
+  description="A chronological archive of all published posts"
+>
+  <!-- Archive Feed -->
+  <PostFeed
+    posts={allPosts}
+    variant="archive"
+  />
+</PageLayout>

@@ -1,0 +1,24 @@
+---
+import siteConfig from '@/site.config';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SEO from "@/components/SEO.astro";
+import { getAllPosts } from "@/utils/content";
+import PostFeed from "@/components/content/PostFeed.astro";
+import HomeIntro from "@/components/content/HomeIntro.astro";
+import { generateWebsiteSchema } from "@/utils/schema";
+
+const allPosts = await getAllPosts();
+const structuredData = generateWebsiteSchema();
+---
+<BaseLayout schema={structuredData}>
+	<SEO slot="seo" title="Home" description={siteConfig.description} ogImage="/og/default.png" />
+	<h1 class="sr-only">{siteConfig.title}</h1>
+	
+	<HomeIntro />
+	
+	<PostFeed
+		posts={allPosts.slice(0, siteConfig.recentPosts)}
+		variant="timeline"
+		sectionTitle="Recent"
+	/>
+</BaseLayout>

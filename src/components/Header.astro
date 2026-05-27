@@ -1,0 +1,161 @@
+---
+import siteConfig from "@/site.config";
+
+import SunIcon from "@/assets/sun.svg";
+import MoonIcon from "@/assets/moon.svg";
+
+import { getAssetPath } from "@/utils/url";
+
+const pathname = Astro.url.pathname;
+
+function isActive(url: string) {
+  if (url === "/") {
+    return pathname === "/";
+  }
+
+  return pathname.startsWith(url);
+}
+---
+
+<header class="site-header sticky top-0 z-50 h-30 sm:h-20 border-b border-border backdrop-blur bg-background/50">
+  <div class="app-layout flex flex-wrap items-center gap-x-12 justify-between gap-y-6 py-4">
+    <!-- Logo / Title -->
+    <a href="/" class="flex items-center gap-3">
+      {
+        siteConfig.showLogo && siteConfig.logo ? (
+          <img
+            src={getAssetPath(siteConfig.logo)}
+            alt={siteConfig.title}
+            class="h-8 w-auto"
+          />
+        ) : (
+          <span class="text-foreground font-content text-2xl font-semibold tracking-tight">
+            {siteConfig.title}
+          </span>
+        )
+      }
+    </a>
+
+    <!-- Navigation -->
+    <nav
+      class="order-3 flex w-full flex-wrap items-center gap-x-5 gap-y-2 font-ui md:order-0 md:w-auto"
+    >
+      {
+        siteConfig.navigation.map((item) => (
+          <a
+            href={item.url}
+            class="nav-link transition-colors duration-200",
+            aria-current={isActive(item.url) ? "page" : undefined}
+          >
+            {item.title}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- Actions -->
+    <div class="ml-auto flex items-center font-ui">
+      {
+        siteConfig.showThemeToggle && (
+          <button
+            type="button"
+            id="theme-toggle"
+            class="bg-muted/70 text-muted-foreground hover:bg-muted hover:text-accent inline-flex h-9 items-center gap-2 rounded-full px-3 text-sm transition-colors border border-border"
+            aria-label="Toggle theme"
+          >
+            <span class="hidden items-center gap-2 dark:flex">
+              <SunIcon class="size-4" />
+              Light
+            </span>
+
+            <span class="flex items-center gap-2 dark:hidden">
+              <MoonIcon class="size-4" />
+              Dark
+            </span>
+          </button>
+        )
+      }
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggle = document.querySelector("#theme-toggle");
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme") ?? "light";
+
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      document.documentElement.style.colorScheme = nextTheme;
+
+      localStorage.setItem("theme", nextTheme);
+
+      window.__theme = { value: nextTheme };
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+
+    /* Subtle shadow appears after scrolling */
+    animation: header-shadow linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 1px;
+  }
+
+  @keyframes header-shadow {
+    from {
+      box-shadow: none;
+    }
+
+    to {
+      box-shadow:
+        0 1px 12px 0
+        color-mix(
+          in srgb,
+          var(--foreground) 8%,
+          transparent
+        );
+    }
+  }
+
+  /* Reading progress */
+  .site-header::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: color-mix(
+      in srgb,
+      var(--accent) 75%,
+      transparent
+    );
+
+    transform-origin: left;
+    transform: scaleX(0);
+    animation:
+      reading-progress linear,
+      progress-fade linear;
+    animation-timeline: scroll();
+    animation-range: 0 100%;
+  }
+
+  @keyframes reading-progress {
+    from {transform: scaleX(0);}
+    to {transform: scaleX(1);}
+  }
+  @keyframes progress-fade {
+    0% {opacity: 0;}
+    2%,
+    100% {opacity: 1;}
+  }
+</style>

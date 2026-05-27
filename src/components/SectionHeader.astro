@@ -1,0 +1,20 @@
+---
+interface Props {
+  title?: string;
+  subheading?: string;
+}
+
+const { title, subheading } = Astro.props;
+---
+
+<div class="flex flex-col gap-2 mb-4 py-2">
+  <h2 class="text-muted-foreground text-xl uppercase font-sans tracking-widest m-0">{title}</h2>
+  {subheading && (
+    <p class="text-sm text-muted-foreground">{subheading}</p>
+  )}
+  {Astro.slots.has('meta') && (
+    <div class="section-header-meta">
+      <slot name="meta" />
+    </div>
+  )}
+</div>

@@ -1,0 +1,27 @@
+---
+import { slugify } from '@/utils/text';
+
+interface Props {
+  title?: string;
+  subheading?: string;
+  transitionName?: string;
+}
+const { title, subheading, transitionName } = Astro.props;
+---
+<section class="flex flex-col mb-2 gap-2">
+  {title && (
+    <h1 
+      class="text-4xl font-semibold tracking-tight mt-0 mb-1 leading-tight"
+      transition:name={transitionName}
+    > 
+      {title} 
+    </h1>
+  )}
+  {subheading && (
+    <p class="text-muted-foreground font-ui leading relaxed">
+      {subheading}
+    </p>
+  )}
+  <slot name="meta" />
+  <slot />
+</section>

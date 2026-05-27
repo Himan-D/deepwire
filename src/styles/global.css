@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "./typography.css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  * {
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  a,
+  button {
+    @apply outline-accent outline-offset-1 focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--selection);
+    color: var(--foreground);
+  }
+}
+
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+@utility app-layout {
+  @apply max-w-app mx-auto w-full px-4;
+}
+
+@utility active-nav {
+  @apply underline underline-offset-6 decoration-[1.5px];
+}
+
+@utility content-layout {
+  @apply max-w-3xl mx-auto w-full px-4;
+}
+
+:target {
+  scroll-margin-block: 1rem;
+}
+
+@layer components {
+
+    /* ── Scroll To Top ───────────────────────────────── */
+  .scroll-to-top {
+    @apply fixed bottom-6 right-6 z-50
+           flex items-center justify-center
+           w-9 h-9 rounded-full
+           bg-muted/70 border border-border
+           text-muted-foreground
+           shadow-sm cursor-pointer
+           transition-all duration-200;
+    &:hover {
+      @apply text-accent shadow-md -translate-y-0.5;
+    }
+    &[hidden] { @apply hidden; }
+
+    animation: scroll-to-top-fade linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 300px;
+  }
+
+  @keyframes scroll-to-top-fade {
+    from { opacity: 0; pointer-events: none; }
+    to   { opacity: 1; pointer-events: auto; }
+  }
+
+  .nav-link {
+    @apply relative text-base no-underline text-muted-foreground transition-colors duration-200;
+    @apply hover:text-accent;
+    @apply aria-[current=page]:text-foreground;
+
+    @apply after:absolute after:-bottom-0.5 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-accent;
+    @apply after:transition-[width] after:duration-200;
+    @apply after:content-[''];
+
+    @apply hover:after:w-full;
+    
+    @apply aria-[current=page]:after:w-8;
+  }
+
+  .divider {
+    @apply border-b border-border py-2 my-2;
+  }
+
+  .heading-anchor {
+    @apply text-muted-foreground w-4 inline-block text-center ms-2 no-underline opacity-0 transition-opacity duration-200;
+  }
+
+  :is(h2, h3, h4):hover .heading-anchor {
+    @apply opacity-100;
+  }
+
+  @keyframes content-enter {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .post-content {
+    animation: content-enter 250ms ease;
+  }
+}
