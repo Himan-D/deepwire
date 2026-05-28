@@ -10,9 +10,9 @@
     "build": "astro build && npx pagefind --site dist && cp -r dist/pagefind public/",
     "preview": "astro preview",
     "lint": "biome lint .",
-		"format": "pnpm run format:code && pnpm run format:imports",
-		"format:code": "biome format . --write && prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
-		"format:imports": "biome check --formatter-enabled=false --write",
+    "format": "pnpm run format:code && pnpm run format:imports",
+    "format:code": "biome format . --write && prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
+    "format:imports": "biome check --formatter-enabled=false --write",
     "astro": "astro"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
+    "pagefind": "^1.5.2",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0"

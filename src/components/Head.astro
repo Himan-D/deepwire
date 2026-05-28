@@ -52,7 +52,7 @@ const { lang = "en", schema } = Astro.props;
             : "light";
 
         document.documentElement.setAttribute("data-theme", theme);
-
+        document.documentElement.setAttribute('data-pf-theme', theme);
         document.documentElement.style.colorScheme = theme;
 
         window.__theme = { value: theme, };
@@ -60,6 +60,17 @@ const { lang = "en", schema } = Astro.props;
     })();
   </script>
   
+  <link
+    href="/pagefind/pagefind-component-ui.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/src/styles/pagefind.css" />
+  
+  <script
+    src="/pagefind/pagefind-component-ui.js"
+    type="module"
+  ></script>
+
   <Font cssVariable="--font-lipi-sans" preload />
   <Font cssVariable="--font-lipi-serif" preload />
   <Font cssVariable="--font-lipi-mono" preload />

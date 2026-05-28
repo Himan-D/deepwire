@@ -36,10 +36,8 @@ function getPreferredTheme(): Theme {
 }
 
 function applyTheme(theme: Theme) {
-  document.documentElement.setAttribute(
-    "data-theme",
-    theme
-  );
+  document.documentElement.setAttribute("data-theme",theme);
+  document.documentElement.setAttribute('data-pf-theme', theme);
 
   document.documentElement.style.colorScheme =
     theme;

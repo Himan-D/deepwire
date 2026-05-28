@@ -38,10 +38,18 @@ type Props = {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
+
+const formattedDate = page.data.updated?.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+});
+
 ---
 
 <PageLayout entry={page}>
-  <div class="app-prose page-content">
+  <div class="app-prose page-content data-pagefind-body">
+    <meta data-pagefind-filter="collection[content]" content="page" />
+    <meta data-pagefind-sort="date[content]" content={formattedDate} />
     <Content />
   </div>
 </PageLayout>
