@@ -15,8 +15,8 @@ const structuredData = generateWebsiteSchema();
 	<h1 class="sr-only">{siteConfig.title}</h1>
 	
 	<HomeHero />
-	
-	<section class="space-y-4">
+	<div class="divider" />
+	<section class="space-y-8">
 		<PostFeed
 			posts={allPosts.slice(0, 1)}
 			variant="featured"

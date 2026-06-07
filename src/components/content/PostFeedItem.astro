@@ -26,11 +26,6 @@ const titleClass = titleClassMap[variant];
 
 ---
 <article class="flex flex-col space-y-3 py-4 first:pt-0">
-  <PostFeedMeta
-    post={post}
-    showReadingTime
-    accentCategory
-  />
   <PostFeedTitle
     post={post}
     class={titleClass}
@@ -42,4 +37,9 @@ const titleClass = titleClassMap[variant];
       </p>
     )
   }
+  <PostFeedMeta
+    post={post}
+    showReadingTime
+    accentCategory
+  />
 </article>
