@@ -63,7 +63,7 @@
      ========================================= */
 
   .app-prose :where(a) {
-    @apply decoration-border underline underline-offset-4 transition-colors hover:text-primary hover:decoration-accent;
+    @apply text-foreground decoration-border underline underline-offset-4 transition-colors hover:text-primary hover:decoration-accent;
   }
 
   /* =========================================
@@ -110,7 +110,7 @@
      ========================================= */
 
   .app-prose :where(code):not(pre code) {
-    @apply bg-muted border border-border font-code text-muted-foreground rounded p-1 text-xs before:content-none after:content-none;
+    @apply bg-accent border border-border font-code text-accent-foreground rounded p-0.5 text-xs before:content-none after:content-none;
   }
 
   /* =========================================
@@ -118,7 +118,7 @@
      ========================================= */
 
   .app-prose :where(pre) {
-    @apply border-border overflow-x-auto rounded-xl border text-sm leading-7;
+    @apply overflow-x-auto text-sm leading-7;
   }
 
   .app-prose :where(pre):focus-visible {
@@ -126,11 +126,11 @@
   }
 
   .astro-code {
-    @apply border-border font-code flex border bg-muted text-(--shiki-light) [&_span]:text-(--shiki-light);
+    @apply font-code flex bg-accent text-(--shiki-light) [&_span]:text-(--shiki-light);
   }
 
   html[data-theme="dark"] .astro-code {
-    @apply bg-muted text-(--shiki-dark) [&_span]:text-(--shiki-dark);
+    @apply bg-accent text-(--shiki-dark) [&_span]:text-(--shiki-dark);
   }
 
   .astro-code code {
@@ -168,6 +168,40 @@
   
   .app-prose :where(blockquote) p {
     @apply text-base leading-relaxed text-muted-foreground;
+  }
+
+  /* Attribution / cite inside blockquote */
+  .app-prose :where(blockquote cite),
+  .app-prose :where(blockquote p:last-child:not(:first-child)) {
+    @apply not-italic text-xs text-muted-foreground mt-2 block;
+  }
+  
+  .app-prose :where(blockquote cite)::before {
+    content: "— ";
+  }
+  
+  
+  /* ── Pullquote ────────────────────────────────────────────────
+    A highlighted passage — larger, centred register,
+    top and bottom rules only, no left rule.
+    Applied via: <blockquote class="pullquote">
+  ──────────────────────────────────────────────────────────── */
+  .app-prose :where(blockquote.pullquote) {
+    @apply border-s-0 ps-0 my-10 mx-0 not-italic text-center text-muted-foreground;
+    @apply border-t border-b border-border py-6;
+  }
+  
+  .app-prose :where(blockquote.pullquote) p {
+    @apply text-xl md:text-2xl font-medium leading-snug tracking-[-0.01em] text-foreground;
+  }
+  
+  /* Attribution inside pullquote */
+  .app-prose :where(blockquote.pullquote cite) {
+    @apply text-xs text-muted-foreground italic mt-3 block not-italic;
+  }
+  
+  .app-prose :where(blockquote.pullquote cite)::before {
+    content: "— ";
   }
 
   /* =========================================
