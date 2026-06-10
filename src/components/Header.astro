@@ -25,8 +25,8 @@ function isActive(url: string) {
             class="h-8 w-auto"
           />
         ) : (
-          <span class="text-foreground font-display text-2xl font-semibold tracking-tight">
-            {siteConfig.title}
+          <span class="text-foreground font-content text-2xl font-semibold tracking-tight">
+            {siteConfig.title}<span class="text-primary font-normal">.</span>
           </span>
         )
       }
@@ -39,7 +39,7 @@ function isActive(url: string) {
           siteConfig.navigation.map((item) => (
             <a
               href={item.url}
-              class="nav-link"
+              class="nav-link link-hover"
               aria-current={isActive(item.url) ? "page" : undefined}
             >
               {item.title}
@@ -54,7 +54,7 @@ function isActive(url: string) {
       <!-- Actions -->
       <div class="flex items-center gap-4 font-ui">
         <!-- <pagefind-modal-trigger compact hide-shortcut></pagefind-modal-trigger> -->
-
+        <!-- <pagefind-searchbox></pagefind-searchbox> -->
         {
           siteConfig.showThemeToggle && (
             <button
@@ -70,7 +70,7 @@ function isActive(url: string) {
         <button
           id="menu-toggle"
           type="button"
-          class="sm:hidden inline-flex h-8 w-8 items-center justify-center rounded border border-border bg-transparent text-muted-foreground hover:text-accent transition-colors duration-150"
+          class="sm:hidden inline-flex h-8 w-8 items-center justify-center rounded border border-border bg-transparent text-muted-foreground hover:text-primary transition-colors duration-150"
           aria-label="Toggle navigation"
           aria-expanded="false"
           aria-controls="mobile-drawer"
@@ -218,7 +218,7 @@ function isActive(url: string) {
 
   .mobile-nav-item:hover,
   .mobile-nav-item[aria-current="page"] {
-    color: var(--accent);
+    color: var(--color-primary);
   }
 
   .mobile-nav-arrow {
@@ -230,6 +230,6 @@ function isActive(url: string) {
 
   .mobile-nav-item:hover .mobile-nav-arrow,
   .mobile-nav-item[aria-current="page"] .mobile-nav-arrow {
-    color: var(--accent);
+    color: var(--color-primary);
   }
 </style>

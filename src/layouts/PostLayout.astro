@@ -1,16 +1,18 @@
 ---
 import siteConfig from "@/site.config";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { type Post, getPostUrl, getPostSlug, getAllPosts, getRelatedPosts } from "@/utils/content";
+import { type Post, getPostSlug, getAllPosts, getRelatedPosts } from "@/utils/content";
 import { calculateReadingTime, slugify } from "@/utils/text";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import ReadingProgress from "@/components/ReadingProgress.astro";
 import SharePost from "@/components/content/SharePost.astro";
 import SEO from "@/components/SEO.astro";
-import PostFeed from "@/components/content/PostFeed.astro";
 import PostNavigation from "@/components/content/PostNavigation.astro";
 import { generatePostSchema } from "@/utils/schema";
-import PostFeedMeta from "@/components/content/PostFeedMeta.astro";
+import PostMeta from "@/components/content/PostMeta.astro";
+import RelatedPosts from "@/components/content/RelatedPosts.astro";
+import Footer from "@/components/Footer.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
 
 type Props = {
   post: Post;
@@ -46,6 +48,17 @@ const allPosts    = await getAllPosts();
 const relatedPosts = getRelatedPosts(post, allPosts, siteConfig.relatedPosts);
 const ogImage = `/og/posts/${getPostSlug(post.id, post.filePath)}.png`;
 const structuredData = generatePostSchema(post);
+
+const displayDate = new Intl.DateTimeFormat("en", {
+  month: "short",
+  year: "numeric",
+}).format(updated ?? published);
+
+const readingTime =
+  siteConfig.showReadingTime
+    ? calculateReadingTime(post.body ?? "").text
+    : null;
+
 ---
 
 <BaseLayout schema={structuredData}>
@@ -61,11 +74,10 @@ const structuredData = generatePostSchema(post);
   <Fragment slot="header">
     <Breadcrumb />
     <!-- Post Header -->
-    <header class="space-y-3">
-
+    <header class="space-y-4">
       <!-- Title -->
       <h1 
-          class="font-display text-3xl leading-tight font-medium md:text-4xl"
+          class="font-content text-3xl leading-tight tracking-tight font-medium md:text-4xl mb-2 text-balance"
           transition:name={slugify(post.data.title.replaceAll(".", "-"))}
       >
           {post.data.title}
@@ -74,19 +86,16 @@ const structuredData = generatePostSchema(post);
       <!-- Description -->
       {
         post.data.description && (
-          <p class="max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p class="max-w-xl text-base text-prettyfont-content italic font-light leading-relaxed text-muted-foreground">
             {post.data.description}
           </p>
         )
       }
-
+      
       <!-- Metadata -->
-      <PostFeedMeta
-        post={post}
-        showReadingTime
-        accentCategory
-      />
-
+      <div class="post-meta flex flex-row items-baseline gap-2 mb-3 text-xs text-muted-foreground">
+        <PostMeta post={post} accentCategory showReadingTime />
+      </div>
       <div class="divider" />
     </header>
   </Fragment>
@@ -121,31 +130,28 @@ const structuredData = generatePostSchema(post);
       <!-- Content -->
 	    <div class="app-prose post-content">
 	      <slot />
+        <hr />
 	    </div>
-      <div class="section-divider flex items-center justify-center gap-4 text-muted-foreground my-8 text-xl" aria-hidden="true">
-        <span>·</span>
-        <span>·</span>
-        <span>·</span>
-      </div>
 	  </article>
     <!-- Tags -->
-      {
-        post.data.tags &&
-          post.data.tags.length > 0 && (
-            <div class="flex flex-wrap items-center gap-3">
-              {post.data.tags.map(
-                (tag) => (
-                  <a
-                    href={`/tags/${slugify(tag)}`}
-                    class="text-sm underline font-ui text-muted-foreground hover:text-accent transition-colors"
-                  >
-                    {tag}
-                  </a>
-                )
-              )}
-            </div>
-          )
-      }
+    {
+      post.data.tags &&
+        post.data.tags.length > 0 && (
+          <div class="flex flex-wrap items-baseline gap-3">
+            <SectionHeader title="filed under" />
+            {post.data.tags.map(
+              (tag) => (
+                <a
+                  href={`/tags/${slugify(tag)}`}
+                  class="text-sm underline font-ui text-muted-foreground link-hover"
+                >
+                  {tag}
+                </a>
+              )
+            )}
+          </div>
+        )
+    }
     <SharePost title={post.data.title} />
     <div class="divider" />
   </section>
@@ -158,14 +164,19 @@ const structuredData = generatePostSchema(post);
   </Fragment>
   <Fragment slot="after">
     {relatedPosts.length > 0 && (
-      <PostFeed
-        posts={relatedPosts}
-        variant="timeline"
-        sectionTitle="Related Reading"
-      />
+      // <PostFeed
+      //   posts={relatedPosts}
+      //   variant="timeline"
+      //   sectionTitle="Related Reading"
+      // />
+      <RelatedPosts posts={relatedPosts} sectionTitle="More like this"/>
     )}
   </Fragment>
   <Fragment slot="scripts">
     <ReadingProgress />
+  </Fragment>
+
+  <Fragment slot="footer">
+    <Footer />
   </Fragment>
 </BaseLayout>

@@ -4,6 +4,7 @@ import { getAllPosts } from "@/utils/content";
 import PageLayout from "@/layouts/PageLayout.astro";
 import PostFeed from "@/components/content/PostFeed.astro";
 import siteConfig from "@/site.config";
+import PageHeader from "@/components/PageHeader.astro";
 
 export const getStaticPaths = (async ({
   paginate,
@@ -16,17 +17,27 @@ export const getStaticPaths = (async ({
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
+const allPosts = await getAllPosts();
 const isFirstPage = page.currentPage === 1;
 const title = isFirstPage
   ? "Posts"
   : `Posts - Page ${page.currentPage}`;
 const description =
   "Browse all published posts.";
+
 ---
 <PageLayout
   title={title}
   description={description}
+  showHeader={false}
 >
+
+  <PageHeader {title} subheading={description} >
+    <div slot="meta" class="mt-4">
+      {allPosts.length} writings
+    </div>
+  </PageHeader>
+
   <PostFeed
     posts={page.data}
     variant="timeline"
@@ -38,7 +49,7 @@ const description =
         page.url.prev && (
           <a
             href={page.url.prev}
-            class="text-muted-foreground hover:text-foreground inline-flex min-h-10 items-center transition-colors"
+            class="text-muted-foreground hover:text-foreground font-ui inline-flex min-h-10 items-center transition-colors"
           >
             ← Previous
           </a>
@@ -46,7 +57,7 @@ const description =
       }
     </div>
 
-    <div class="text-muted-foreground text-sm">
+    <div class="text-muted-foreground font-ui text-sm">
       Page {page.currentPage} of {page.lastPage}
     </div>
 
@@ -55,7 +66,7 @@ const description =
         page.url.next && (
           <a
             href={page.url.next}
-            class="text-muted-foreground hover:text-foreground inline-flex min-h-10 items-center transition-colors"
+            class="text-muted-foreground hover:text-foreground font-ui inline-flex min-h-10 items-center transition-colors"
           >
             Next →
           </a>

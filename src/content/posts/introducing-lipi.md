@@ -21,6 +21,8 @@ Instead of cards, dashboards, and content-heavy grids, Lipi focuses on:
 
 The design philosophy behind Lipi is simple: writing should remain the primary interface.
 
+---
+
 ## Why Lipi?
 
 Many modern blog themes optimize for:

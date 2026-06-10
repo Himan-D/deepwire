@@ -41,7 +41,7 @@
      Body Content
      ========================================= */
 
-  .app-prose :where(p, ul, ol, blockquote, table) {
+  .app-prose :where(p, ul, ol, table) {
     @apply text-foreground leading-relaxed;
   }
 
@@ -63,7 +63,7 @@
      ========================================= */
 
   .app-prose :where(a) {
-    @apply decoration-border underline underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
+    @apply decoration-border underline underline-offset-4 transition-colors hover:text-primary hover:decoration-accent;
   }
 
   /* =========================================
@@ -83,7 +83,8 @@
      ========================================= */
 
   .app-prose :where(hr) {
-    @apply border-border my-12;
+    @apply h-px border-0 m-12;
+    background: linear-gradient(90deg,transparent,var(--color-accent) 20%,var(--color-accent) 80%,transparent);
   }
 
   /* =========================================
@@ -161,7 +162,12 @@
      ========================================= */
 
   .app-prose :where(blockquote) {
-    @apply border-accent text-muted-foreground border-s-2 ps-5 italic;
+    @apply border-primary border-s-[0.5px] ps-5 my-6 italic;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+  }
+  
+  .app-prose :where(blockquote) p {
+    @apply text-base leading-relaxed text-muted-foreground;
   }
 
   /* =========================================
@@ -198,7 +204,7 @@
 
   @media (min-width: 768px) {
     .post-content > p:first-of-type::first-letter {
-      @apply text-accent font-display font-semibold;
+      @apply text-primary font-content font-semibold;
       initial-letter: 3;
       margin-inline-end: 0.25em;
     }

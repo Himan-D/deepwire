@@ -42,7 +42,8 @@ const { lang = "en", schema } = Astro.props;
 
     </main>
 
-    <Footer />
+    <slot name="footer" />
+    <!-- <Footer /> -->
     <ScrollToTop />
     
     <!-- Additional page-specific scripts -->
