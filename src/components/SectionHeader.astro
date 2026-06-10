@@ -2,14 +2,15 @@
 interface Props {
   title?: string;
   subheading?: string;
+  class?: string;
 }
 
-const { title, subheading } = Astro.props;
+const { title, subheading, class: className = "" } = Astro.props;
 ---
 
-<div class="mb-2 sm:mb-4 flex flex-col gap-2 py-2">
+<div class:list={["flex flex-col gap-2", {className}]}>
   {title && (
-    <span class="m-0 font-ui text-xs uppercase tracking-widest text-muted-foreground">
+    <span class="font-code text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground">
       {title}
     </span>
   )}

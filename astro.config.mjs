@@ -41,48 +41,58 @@ export default defineConfig({
 
   fonts: [
     {
-      name: "Noto Sans",
+      name: "Manrope",
       cssVariable: "--font-lipi-sans",
-      provider: fontProviders.google(),
+      provider: fontProviders.fontsource(),
       weights: [300, 400, 500, 600, 700],
       fallbacks: ["sans-serif"],
       formats: ["woff", "ttf"],
     },
     {
-      name: "Source Serif 4",
+      name: "Literata",
       cssVariable: "--font-lipi-serif",
-      provider: fontProviders.google(),
+      provider: fontProviders.fontsource(),
       weights: [300, 400, 500, 600, 700],
       fallbacks: ["serif"],
       formats: ["woff", "ttf"],
     },
     {
-      name: "JetBrains Mono",
+      name: "Fira Code",
       cssVariable: "--font-lipi-mono",
-      provider: fontProviders.google(),
+      provider: fontProviders.fontsource(),
       weights: [ 400, 500, 600, 700],
       fallbacks: ["monospace"],
       formats: ["woff", "ttf"],
     },
     {
-      name: "Lora",
-      cssVariable: "--font-lipi-display",
-      provider: fontProviders.google(),
+      name: "Caveat",
+      cssVariable: "--font-lipi-hand",
+      provider: fontProviders.fontsource(),
       weights: [ 400, 500, 600, 700],
       fallbacks: ["serif"],
       formats: ["woff", "ttf"],
     }
   ],
-
-  i18n:{
-    locales: ["en", "mr"],
-    defaultLocale: "en",
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
   
   vite: {
+    build: {
+      // Per-page CSS splitting. Caches better than one giant bundle for
+      // return visitors who navigate between pages.
+      cssCodeSplit: true,
+      // cssMinify: 'lightningcss',
+      minify: 'esbuild',
+    },
+    css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+        // Modern targets — drops legacy prefixes.
+        targets: {
+          chrome: 110 << 16,
+          firefox: 115 << 16,
+          safari: 16 << 16,
+        },
+      },
+    },
     optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
 		},
@@ -96,6 +106,13 @@ export default defineConfig({
     mdx(), 
     sitemap()
   ],
+
+  build: {
+    // Inline small stylesheets into the HTML (~4KB threshold), keep larger
+    // ones as separate files so they're cacheable across pages.
+    inlineStylesheets: 'auto',
+    assets: '_astro',
+  },
 
   markdown: {
     remarkPlugins: [

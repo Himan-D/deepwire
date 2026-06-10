@@ -60,11 +60,14 @@ function formatDay(date: Date) {
     aria-label="Filter writings by tag"
     data-pagefind-ignore
   >
-    <button class="filter-link is-active" data-filter="all" type="button"
+    <button class="filter-link text-sm text-muted-foreground cursor-pointer link-hover is-active" data-filter="all" type="button"
       >all</button
     >
     {allTags.map((tag) => (
-      <button class="filter-link" data-filter={tag} type="button">
+      <button 
+        class="relative filter-link text-sm text-muted-foreground cursor-pointer link-hover" 
+        data-filter={tag} 
+        type="button">
         {tag}
       </button>
     ))}
@@ -101,7 +104,7 @@ function formatDay(date: Date) {
               const isInitiallyHidden = index >= INITIAL_PER_YEAR;
               return (
                 <li
-                  class="archive-item"
+                  class="archive-item py-1"
                   data-tags={tags}
                   data-title={post.data.title.toLowerCase()}
                   data-lang={post.data.lang ?? "en"}
@@ -116,7 +119,7 @@ function formatDay(date: Date) {
           <!-- Show more (hidden until JS evaluates; only rendered when needed) -->
           {hasMore && (
             <button
-              class="show-more-btn mt-1"
+              class="show-more-btn text-sm text-muted-foreground cursor-pointer link-hover mt-1"
               type="button"
               data-year={String(year)}
             >
@@ -130,16 +133,7 @@ function formatDay(date: Date) {
 </PageLayout>
 
 <style>
-  @reference "../styles/global.css";
-
   /* ── Filter bar ──────────────────────────────── */
-
-  .filter-link {
-    position: relative;
-    @apply bg-transparent border-0 p-0 text-sm sm:text-base text-muted-foreground cursor-pointer;
-    @apply transition-colors duration-200;
-    line-height: 1.6;
-  }
 
   .filter-link::after {
     content: "";
@@ -153,7 +147,9 @@ function formatDay(date: Date) {
   }
 
   .filter-link.is-active {
-    @apply text-foreground;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-style: italic;
   }
 
   .filter-link.is-active::after {
@@ -161,27 +157,12 @@ function formatDay(date: Date) {
   }
 
   .filter-link:hover:not(.is-active) {
-    @apply text-accent;
-  }
-
-  /* ── Show more ───────────────────────────────── */
-
-  .show-more-btn {
-    @apply bg-transparent border-0 p-0 text-sm text-muted-foreground cursor-pointer;
-    @apply transition-colors duration-200 hover:text-accent;
+    color: var(--color-primary);  
   }
 
   /* ── Mobile: date above title, no columns ────── */
 
   @media (max-width: 640px) {
-    .archive-link {
-      @apply flex-col gap-0.5 py-3;
-    }
-
-    .archive-meta {
-      width: auto;
-    }
-  }
 
   .archive-controls input[type="search"] {
     outline: none;

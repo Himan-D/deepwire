@@ -46,7 +46,7 @@ const formattedDate = page.data.updated?.toLocaleDateString("en-US", {
 
 ---
 
-<PageLayout entry={page}>
+<PageLayout entry={page} showHeader>
   <div class="app-prose page-content data-pagefind-body">
     <meta data-pagefind-filter="collection[content]" content="page" />
     <meta data-pagefind-sort="date[content]" content={formattedDate} />

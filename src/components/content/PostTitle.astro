@@ -13,14 +13,12 @@ const {
 } = Astro.props;
 
 const url = getPostUrl(post.id, post.filePath);
-const titleSlug = slugify(
-  post.data.title.replaceAll(".", "-")
-);
+const titleSlug = slugify(post.data.title.replaceAll(".", "-"));
 ---
 
 <a
   href={url}
-  class="no-underline transition-colors duration-200 hover:text-accent"
+  class="no-underline hover:text-primary"
 >
   <h2
     class={className}
