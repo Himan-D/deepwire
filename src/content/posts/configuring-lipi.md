@@ -102,4 +102,4 @@ This string appears at the very bottom of every page, in small text. It is a goo
   heroVariant: "studio",
 ```
 
-The home page hero comes in two variants: `"default"` renders a minimal text-based hero, and `"studio"` renders the full Kami hero with the studio logotype and handwritten annotation. If you are publishing under your own name rather than a studio brand, `"default"` is the cleaner choice.
+The home page hero comes in two variants: `"default"` renders a minimal text-based hero, and `"studio"` renders the full studio hero with the studio logotype and handwritten annotation. If you are publishing under your own name rather than a studio brand, `"default"` is the cleaner choice.

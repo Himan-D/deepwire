@@ -16,9 +16,9 @@ The monospaced typeface is **Fira Code**, used for inline code and code blocks. 
 
 The annotation typeface is **Caveat**, a handwritten face used for the single flourish on the home page. It appears in one place, rotated two degrees, in the primary accent colour. Using it more widely would undercut the effect.
 
-## The Kami Design Language
+## Design Language
 
-Kami is the visual and typographic system that runs through Lipi. Its principles are: warm over cool, constrained over expansive, quiet over assertive.
+Lipi's visual and typographic character is inspired by the [Kami](https://kami.tw93.fun) design language. The guiding principles are: warm over cool, constrained over expansive, quiet over assertive.
 
 The base colour scale is a single warm neutral ramp of eleven steps, from a near-white parchment (`#F5F4ED`) to a near-black (`#141413`). There is one brand colour, a terracotta (`#E85D2A`), used sparingly: links on hover, the reading progress bar, the drop capital, the CTA on the featured post. The scale is not cold grey and it is not blue. It reads like a printed page rather than a screen.
 
@@ -46,6 +46,6 @@ Fonts are loaded through **Astro's font API**, which optimises loading, subsets 
 
 **The reading progress bar** at the top of each post is powered by CSS scroll-driven animations, with no JavaScript fallback needed for modern browsers.
 
-## Versioning
+## Source
 
-Lipi uses semantic versioning. Breaking changes to the theme structure or configuration API increment the major version. The source is available at the link in the footer.
+The Lipi is MIT licensed and the source is available at the link in the footer.

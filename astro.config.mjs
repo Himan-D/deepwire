@@ -1,15 +1,14 @@
 // @ts-check
 import { defineConfig, fontProviders, svgoOptimizer } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import siteConfig from './src/site.config';
-import remarkGfm from 'remark-gfm';
 import rehypeUnwrapImages from 'rehype-unwrap-images';
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { rawFonts } from "./src/plugins/rawFonts";
+import { unified } from '@astrojs/markdown-remark';
 
 // https://astro.build/config
 export default defineConfig({
@@ -115,11 +114,10 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [
-      remarkGfm,
-    ],
-
-    rehypePlugins: [
+    processor: unified({
+      gfm: true,
+      smartypants: true,
+      rehypePlugins: [
       rehypeSlug,
       rehypeUnwrapImages,
       [
@@ -140,5 +138,6 @@ export default defineConfig({
         },
       ],
     ],
+    }),
   },
 });
