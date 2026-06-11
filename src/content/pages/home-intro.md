@@ -1,11 +1,9 @@
 ---
 title: Home Intro
-description: Homepage introduction content.
+description: A typography-first Astro template for long-form writing.
 updated: 2026-05-26
 ---
 
-Writing about software, travel, systems, and quiet corners of the internet.
+A place for essays, notes, and writing that takes its time.
 
-Lipi is a minimal editorial publishing theme for Astro focused on typography, chronology, and longform reading.
-
-Built for developers, writers, and publishers who prefer calm interfaces over noisy layouts.
+Lipi is a typography-first publishing template for Astro, built for writers who care about how their words look on the page.

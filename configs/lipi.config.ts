@@ -20,14 +20,14 @@ const userConfig: UserConfig = {
   footerLinks: [
     { title: "RSS", url: "/rss.xml" },
     { title: "Archive", url: "/archive" },
-    { title: "Source", url: "https://github.com/ak0r/lipi" },
+    { title: "Source", url: "https://github.com/thelocalhoststudio/lipi" },
     
   ],
 
   social: [
     {
       title: "GitHub",
-      url: "https://github.com/ak0r/lipi",
+      url: "https://github.com/thelocalhoststudio/lipi",
       icon: "github",
     },
     {
