@@ -2,11 +2,11 @@
 
 A typography-first Astro template for long-form writing. Built for essays, travel notes, developer journals, and personal archives — publishing environments where the words come first.
 
-**[Live Demo](https://lipi.amitkul.in)** · **[Source](https://github.com/thelocalhoststudio/lipi)**
+**[Live Demo](https://astro-lipi.pages.dev)** · **[Source](https://github.com/thelocalhoststudio/lipi)**
 
 > **Lipi** (लिपि) is the Sanskrit word for script, the written form of a language.
 
-![Lipi preview](./public/preview.png)
+![Lipi preview](./public/lipi-preview.png)
 
 ---
 
@@ -82,7 +82,7 @@ const userConfig: UserConfig = {
 };
 ```
 
-The full configuration reference is in the [Configuring Lipi](https://lipi.amitkul.in/posts/configuring-lipi) post included with the template.
+The full configuration reference is in the [Configuring Lipi](https://astro-lipi.pages.dev/posts/configuring-lipi) post included with the template.
 
 ---
 
@@ -188,4 +188,4 @@ Fonts are configured in `astro.config.mjs` under the `fonts` array. Swap the `na
 
 ## License
 
-MIT — made by [The Localhost Studio](https://thelocalhoststudio.in).
+MIT — made by [The Localhost Studio](https://github.com/thelocalhoststudio).

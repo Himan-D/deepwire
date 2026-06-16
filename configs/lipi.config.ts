@@ -5,7 +5,7 @@ const userConfig: UserConfig = {
   description:
     "A minimal editorial theme for Astro built for blogs, journals, travel writing, and long-form publishing.",
 
-  url: "https://lipi.amitkul.in",
+  url: "https://astro-lipi.pages.dev",
   author: "John Doe",
 
   logo: "/logo.svg",

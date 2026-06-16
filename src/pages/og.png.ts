@@ -21,7 +21,7 @@ export const GET: APIRoute =
           category:
             "Astro Theme",
 
-          site: "lipi.dev",
+          site: "https://astro-lipi.pages.dev",
         }
       );
 
