@@ -19,6 +19,7 @@
 
   .app-prose :where(h1, h2, h3, h4, h5, h6) {
     @apply text-foreground scroll-mt-24 tracking-tight font-light;
+    margin-top: 1em;
   }
 
   .app-prose :where(h1) {
@@ -87,9 +88,10 @@
      ========================================= */
 
   .app-prose :where(img) {
-    @apply rounded-xl;
+    @apply rounded-sm;
     outline: 1px solid rgba(0, 0, 0, 0.1);
     outline-offset: -1px;
+    margin-block: 0;
   }
 
   html[data-theme="dark"] .app-prose :where(img) {
@@ -113,7 +115,8 @@
      ========================================= */
 
   .app-prose :where(pre) {
-    @apply overflow-x-auto text-sm leading-7;
+    @apply overflow-x-auto;
+    font-size: 0.750rem;
   }
 
   .app-prose :where(pre):focus-visible {

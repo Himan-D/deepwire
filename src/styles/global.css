@@ -5,8 +5,9 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-:root {
-  --full-width-offset: calc((100% - 100vw) / 2);
+
+html {
+  font-size: clamp(16px, 1rem + 0.15vw, 18px);
 }
 
 @layer base {
@@ -100,7 +101,7 @@
 }
 
 @utility breakout {
-  @apply -mx-4 md:-mx-12 lg:-mx-24;
+  @apply -mx-4;
 }
 
 
@@ -203,26 +204,29 @@
 
   /* ── Gallery ─────────────────────────────────────── */
   .gallery-grid {
-    @apply grid gap-2 my-6;
-    @apply sm:-mx-24;
-    /* grid-template-columns: repeat(3, 1fr); */
-    grid-template-columns:
-    repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+    @apply grid gap-2 my-6 breakout;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .gallery-single {
-    @apply my-6;
+    @apply my-6 breakout;
   }
 
   .gallery-item {
-    @apply block overflow-hidden
-           bg-background cursor-zoom-in rounded-sm shadow-sm ring ring-border;
+    @apply block overflow-hidden bg-background cursor-zoom-in rounded-sm ring ring-border shadow-sm;
     transition: box-shadow 0.2s ease;
     &:hover { @apply shadow-md; }
   }
 
   .gallery-item__image {
-    @apply w-full h-full object-cover block aspect-3/2 rounded-sm border border-border;
+    @apply w-full h-full object-cover block aspect-3/2 rounded-sm ;
     transition: opacity 0.2s ease, filter 0.2s ease;
   }
 
