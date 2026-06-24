@@ -4,6 +4,7 @@ import {
   getEntityRecommendations, getGraphNeighborhood,
   searchGraphEntities, getGraphStats, getGraphTimeline
 } from "../../lib/data";
+import { executeCypher } from "../../lib/cypher-query";
 
 export const GET: APIRoute = ({ url }) => {
   const kg = getKnowledgeGraph();
@@ -13,6 +14,21 @@ export const GET: APIRoute = ({ url }) => {
   const neighborhood = url.searchParams.get("neighborhood");
   const timeline = url.searchParams.has("timeline");
   const stats = url.searchParams.has("stats");
+  const cypher = url.searchParams.get("cypher");
+
+  if (cypher) {
+    try {
+      const result = executeCypher(cypher);
+      return new Response(JSON.stringify(result), {
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "no-cache" },
+      });
+    } catch (e) {
+      return new Response(JSON.stringify({ error: (e as Error).message }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      });
+    }
+  }
 
   if (stats) {
     return new Response(JSON.stringify(getGraphStats()), {
