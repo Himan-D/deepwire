@@ -71,9 +71,15 @@ export async function crawlArticle(url: string, timeout = 15000): Promise<Crawle
 
     const textContent = article.textContent?.replace(/\s+/g, " ").trim() || "";
 
+    let cleanContent = article.content;
+    const readabilityMatch = cleanContent.match(/<div[^>]*id="readability-page-1"[^>]*>([\s\S]*)<\/div>\s*$/i);
+    if (readabilityMatch) {
+      cleanContent = readabilityMatch[1];
+    }
+
     return {
       title: article.title || "",
-      content: article.content,
+      content: cleanContent,
       excerpt: excerpt || textContent.slice(0, 300),
       imageUrl: ogImage,
       author,
