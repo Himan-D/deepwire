@@ -1,0 +1,61 @@
+---
+import { timeAgo, truncate } from "../../lib/utils";
+
+export interface Props {
+  articles: Array<{
+    id: number;
+    title: string;
+    excerpt: string;
+    source: string;
+    category: string;
+    publicationDate: Date;
+    importanceScore: number;
+    imageUrl?: string | null;
+  }>;
+}
+
+const { articles } = Astro.props;
+const primary = articles[0];
+const secondary = articles.slice(1, 4);
+---
+
+{primary && (
+  <section class="hero-section overflow-hidden mb-8">
+    <a href={`/story/${primary.id}`} class="block p-8 max-md:p-6">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="category-tag category-{primary.category}">{primary.category}</span>
+        <span class="text-xs text-[var(--text-tertiary)]">{timeAgo(new Date(primary.publicationDate))}</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 hover:text-[var(--accent)] transition-colors">
+        {primary.title}
+      </h1>
+      <p class="text-[var(--text-secondary)] text-lg max-w-3xl mb-4">
+        {truncate(primary.excerpt, 200)}
+      </p>
+      <div class="text-sm text-[var(--text-tertiary)]">
+        <span class="font-medium">{primary.source}</span>
+      </div>
+    </a>
+  </section>
+)}
+
+{secondary.length > 0 && (
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    {secondary.map((article) => (
+      <a href={`/story/${article.id}`} class="news-card p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="category-tag category-{article.category}">{article.category}</span>
+        </div>
+        <h3 class="font-semibold text-sm leading-snug mb-2 line-clamp-3 hover:text-[var(--accent)] transition-colors">
+          {article.title}
+        </h3>
+        <p class="text-xs text-[var(--text-tertiary)] line-clamp-2 mb-2">{article.excerpt}</p>
+        <div class="flex items-center gap-2 text-xs text-[var(--text-tertiary)]">
+          <span>{article.source}</span>
+          <span>·</span>
+          <span>{timeAgo(new Date(article.publicationDate))}</span>
+        </div>
+      </a>
+    ))}
+  </div>
+)}

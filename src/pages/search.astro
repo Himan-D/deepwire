@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsCard from "../components/news/NewsCard.astro";
+import SearchBar from "../components/search/SearchBar.astro";
+import { searchArticles } from "../lib/data";
+import { getAllArticles } from "../lib/data";
+
+const query = Astro.url.searchParams.get("q") || "";
+const results = query ? searchArticles(query) : [];
+const totalArticles = getAllArticles().length;
+---
+
+<BaseLayout title={query ? `Search: ${query}` : "Search"}>
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold mb-4 text-center">Search</h1>
+    <SearchBar initialQuery={query} />
+  </div>
+
+  {query && (
+    <div class="mb-6">
+      <p class="text-sm text-[var(--text-secondary)]">
+        {results.length} results for "<strong class="text-[var(--text-primary)]">{query}</strong>"
+      </p>
+    </div>
+  )}
+
+  {!query && (
+    <div class="text-center py-16">
+      <p class="text-[var(--text-tertiary)]">Search across {totalArticles} articles, companies, and technologies</p>
+    </div>
+  )}
+
+  {query && results.length === 0 && (
+    <div class="text-center py-16">
+      <p class="text-[var(--text-tertiary)]">No results found for "{query}"</p>
+    </div>
+  )}
+
+  <div class="space-y-4">
+    {results.map((article) => (
+      <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
+    ))}
+  </div>
+</BaseLayout>

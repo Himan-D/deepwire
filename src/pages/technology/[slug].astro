@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsCard from "../../components/news/NewsCard.astro";
+import { getAllArticles } from "../../lib/data";
+
+export async function getStaticPaths() {
+  const technologies = [
+    "ai-agents", "rag", "reinforcement-learning", "robotics",
+    "quantum-computing", "edge-ai", "computer-vision", "nlp",
+  ];
+
+  return technologies.map((slug) => ({
+    params: { slug },
+    props: {
+      name: slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+    },
+  }));
+}
+
+const { name, slug } = Astro.props;
+const articles = getAllArticles();
+const query = name.toLowerCase();
+const techArticles = articles.filter((a) =>
+  a.title.toLowerCase().includes(query) ||
+  a.tags.some((t) => t.toLowerCase().includes(query)) ||
+  (a.technologies || []).some((t) => t.toLowerCase().includes(query))
+).slice(0, 20);
+---
+
+<BaseLayout title={name}>
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold mb-2">{name}</h1>
+    <p class="text-[var(--text-secondary)]">Latest developments in {name}</p>
+  </div>
+
+  <div class="space-y-4">
+    {techArticles.map((article) => (
+      <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
+    ))}
+  </div>
+</BaseLayout>

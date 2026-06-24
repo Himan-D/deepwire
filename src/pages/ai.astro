@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsCard from "../components/news/NewsCard.astro";
+import TrendingTopics from "../components/news/TrendingTopics.astro";
+import { getArticlesByCategory, getTrendTopics } from "../lib/data";
+
+const articles = getArticlesByCategory("ai", 50);
+const trendTopics = getTrendTopics();
+---
+
+<BaseLayout title="AI">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold mb-2">Artificial Intelligence</h1>
+    <p class="text-[var(--text-secondary)]">Latest AI developments, model releases, and industry news ({articles.length} articles)</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+    <div class="space-y-4">
+      {articles.map((article) => (
+        <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
+      ))}
+    </div>
+    <aside class="max-lg:hidden">
+      <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+    </aside>
+  </div>
+</BaseLayout>

@@ -1,29 +1,120 @@
 ---
-import siteConfig from '@/site.config';
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import SEO from "@/components/SEO.astro";
-import { getAllPosts } from "@/utils/content";
-import HomeHero from "@/components/content/HomeHero.astro";
-import { generateWebsiteSchema } from "@/utils/schema";
-import FeaturedPost from '@/components/content/FeaturedPost.astro';
-import RecentPosts from '@/components/content/RecentPosts.astro';
-import Footer from '@/components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/news/HeroSection.astro";
+import NewsCard from "../components/news/NewsCard.astro";
+import TrendingTopics from "../components/news/TrendingTopics.astro";
+import { categories } from "../config";
+import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics } from "../lib/data";
 
-const allPosts = await getAllPosts();
-const structuredData = generateWebsiteSchema();
+const topStories = getTopStories(15);
+const trending = getTrendingArticles(4);
+const aiArticles = getArticlesByCategory("ai", 6);
+const researchArticles = getArticlesByCategory("research", 4);
+const startupArticles = getArticlesByCategory("startups", 4);
+const securityArticles = getArticlesByCategory("security", 4);
+const spaceArticles = getArticlesByCategory("space", 4);
+const semiconductorsArticles = getArticlesByCategory("semiconductors", 4);
+const roboticsArticles = getArticlesByCategory("robotics", 4);
+const trendTopics = getTrendTopics();
 ---
-<BaseLayout schema={structuredData}>
-	<SEO slot="seo" title="Home" description={siteConfig.description} ogImage="/og/default.png" />
-	<h1 class="sr-only">{siteConfig.title}</h1>
-	
-	<HomeHero />
-	<!-- <MastHead /> -->
-	<FeaturedPost post={allPosts[0]} />
-	<RecentPosts posts={allPosts.slice(1, siteConfig.recentPosts)} sectionTitle="Recent" />
-	<Fragment slot="footer">
-    <Footer
-			meta='Built for readers, writers, and unfinished drafts.'
-			annotation={siteConfig.annotation}
-		/>
-  </Fragment>
+
+<BaseLayout title="Home">
+  <HeroSection articles={trending.slice(0, 4).map(a => ({
+    id: a.id,
+    title: a.title,
+    excerpt: a.excerpt,
+    source: a.source,
+    category: a.category,
+    publicationDate: new Date(a.publicationDate),
+    importanceScore: a.importanceScore,
+    imageUrl: a.imageUrl,
+  }))} />
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+    <div>
+      <section class="mb-10">
+        <h2 class="section-header">Top Stories</h2>
+        <div class="space-y-4">
+          {topStories.slice(0, 8).map((article) => (
+            <NewsCard
+              id={article.id}
+              title={article.title}
+              url={article.url}
+              source={article.source}
+              author={article.author}
+              excerpt={article.excerpt}
+              category={article.category}
+              publicationDate={new Date(article.publicationDate)}
+              importanceScore={article.importanceScore}
+              imageUrl={article.imageUrl}
+            />
+          ))}
+        </div>
+      </section>
+
+      {aiArticles.length > 0 && (
+        <section class="mb-10">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="section-header mb-0">AI</h2>
+            <a href="/ai" class="text-sm text-[var(--accent)] hover:underline">View all →</a>
+          </div>
+          <div class="space-y-4">
+            {aiArticles.map((article) => (
+              <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {researchArticles.length > 0 && (
+        <section class="mb-10">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="section-header mb-0">Research</h2>
+            <a href="/research" class="text-sm text-[var(--accent)] hover:underline">View all →</a>
+          </div>
+          <div class="space-y-4">
+            {researchArticles.slice(0, 3).map((article) => (
+              <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {startupArticles.length > 0 && (
+        <section class="mb-10">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="section-header mb-0">Startups</h2>
+            <a href="/startups" class="text-sm text-[var(--accent)] hover:underline">View all →</a>
+          </div>
+          <div class="space-y-4">
+            {startupArticles.slice(0, 3).map((article) => (
+              <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        {categories.filter(c => ["security", "space", "semiconductors", "robotics"].includes(c.id)).map((cat) => {
+          const count = {
+            security: securityArticles.length,
+            space: spaceArticles.length,
+            semiconductors: semiconductorsArticles.length,
+            robotics: roboticsArticles.length,
+          }[cat.id] || 0;
+          return (
+            <a href={`/${cat.id}`} class="news-card p-6 text-center hover:border-[var(--accent)] transition-colors">
+              <div class="text-3xl mb-2">{cat.icon}</div>
+              <h3 class="font-bold text-lg">{cat.label}</h3>
+              <p class="text-sm text-[var(--text-secondary)]">{count} articles</p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+
+    <aside class="max-lg:hidden">
+      <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+    </aside>
+  </div>
 </BaseLayout>

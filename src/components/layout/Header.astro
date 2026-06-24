@@ -1,0 +1,30 @@
+---
+import { siteConfig, navigation } from "../../config";
+---
+
+<header class="border-b border-[var(--border)] bg-[var(--bg-secondary)]/80 backdrop-blur-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-2xl font-bold gradient-text">{siteConfig.name}</span>
+      </a>
+
+      <nav class="hide-mobile flex items-center gap-1">
+        {navigation.map((item) => (
+          <a
+            href={item.url}
+            class="text-sm px-3 py-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card)] transition-colors"
+          >
+            {item.title}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="/search" class="text-sm px-4 py-1.5 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent)] transition-colors">
+          Search
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

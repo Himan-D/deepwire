@@ -1,0 +1,41 @@
+---
+import { siteConfig } from "../../config";
+---
+
+<footer class="border-t border-[var(--border)] bg-[var(--bg-secondary)] mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-4 gap-8 max-md:grid-cols-2 max-sm:grid-cols-1">
+      <div>
+        <div class="text-lg font-bold gradient-text mb-3">{siteConfig.name}</div>
+        <p class="text-sm text-[var(--text-tertiary)]">{siteConfig.description}</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">Categories</h4>
+        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+          <li><a href="/ai" class="hover:text-[var(--accent)] transition-colors">AI</a></li>
+          <li><a href="/research" class="hover:text-[var(--accent)] transition-colors">Research</a></li>
+          <li><a href="/startups" class="hover:text-[var(--accent)] transition-colors">Startups</a></li>
+          <li><a href="/security" class="hover:text-[var(--accent)] transition-colors">Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">Topics</h4>
+        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+          <li><a href="/space" class="hover:text-[var(--accent)] transition-colors">Space</a></li>
+          <li><a href="/semiconductors" class="hover:text-[var(--accent)] transition-colors">Semiconductors</a></li>
+          <li><a href="/robotics" class="hover:text-[var(--accent)] transition-colors">Robotics</a></li>
+          <li><a href="/trending" class="hover:text-[var(--accent)] transition-colors">Trending</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">About</h4>
+        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+          <li><a href="/search" class="hover:text-[var(--accent)] transition-colors">Search</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-[var(--border)] mt-8 pt-8 text-center text-sm text-[var(--text-tertiary)]">
+      &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+    </div>
+  </div>
+</footer>

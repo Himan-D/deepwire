@@ -1,57 +1,39 @@
 ---
-import Head from '@/components/Head.astro';
-import Header from '@/components/Header.astro';
-import Footer from "@/components/Footer.astro";
-import ScrollToTop from "@/components/ScrollToTop.astro";
-import HeadingAnchors from '@/scripts/HeadingAnchors.astro';
+import { siteConfig, navigation } from "../config";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import "../styles/global.css";
 
-interface Props {
-  lang?: string;
-  schema?: Record<string, unknown>;
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
 }
 
-const { lang = "en", schema } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
-<!DOCTYPE html>
-<html lang={lang}> 
-  <Head schema={schema}>
-    <slot name="seo" slot="seo" />
-    <slot name="head" slot="head" />
-  </Head>
-  <body class="font-content bg-background text-foreground selection:bg-selection">
 
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ? `${title} — ${siteConfig.name}` : siteConfig.name}</title>
+    <meta name="description" content={description || siteConfig.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title || siteConfig.name} />
+    <meta property="og:description" content={description || siteConfig.description} />
+    <meta property="og:image" content={image || "/og-default.png"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title || siteConfig.name} />
+    <meta name="twitter:description" content={description || siteConfig.description} />
+    <meta name="theme-color" content="#0d1117" />
+  </head>
+  <body class="min-h-screen">
     <Header />
-    <!-- Main content -->
-    <main class="app-layout flex flex-col space-y-8 sm:space-y-10">
-      
-
-      {/* Page/Post Header Section */}
-      <slot name="header" />
-
-      {/* Page/Post Meta Section */}
-      <slot name="meta" />
-
-      {/* Page/Post Content */}
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <slot />
-
-      {/* Post Navigation */}
-      <slot name="navigation" />
-
-      {/* Additional Content */}
-      <slot name="after" />
-
     </main>
-
-    <slot name="footer" />
-    <!-- <Footer /> -->
-    <ScrollToTop />
-    
-    <!-- Additional page-specific scripts -->
-    <slot name="scripts" />
-    <HeadingAnchors />
-    <script>
-      import "@/scripts/theme";
-    </script>
-    <pagefind-modal></pagefind-modal>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,38 @@
+---
+export interface Props {
+  trends: Array<{
+    topic: string;
+    mentionCount: number;
+    growthRate: number;
+    category: string;
+  }>;
+  period: string;
+}
+
+const { trends, period } = Astro.props;
+---
+
+<div class="bg-[var(--bg-card)] border border-[var(--border)] rounded-xl p-6">
+  <h3 class="text-lg font-bold mb-4 capitalize">{period} Trending Topics</h3>
+  <div class="space-y-3">
+    {trends.slice(0, 10).map((trend) => (
+      <a
+        href={`/search?q=${encodeURIComponent(trend.topic)}`}
+        class="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors group"
+      >
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0"></span>
+          <span class="text-sm font-medium truncate group-hover:text-[var(--accent)] transition-colors">
+            {trend.topic}
+          </span>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <span class="text-xs text-[var(--text-tertiary)]">{trend.mentionCount} articles</span>
+          {trend.growthRate > 0 && (
+            <span class="text-xs font-medium text-[var(--green)]">+{trend.growthRate}%</span>
+          )}
+        </div>
+      </a>
+    ))}
+  </div>
+</div>

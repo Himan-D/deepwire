@@ -1,0 +1,30 @@
+---
+import { siteConfig } from "../config";
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - {siteConfig.name} Admin</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="min-h-screen flex bg-slate-950 text-slate-100">
+    <aside class="w-60 border-r border-slate-800 p-6">
+      <div class="text-lg font-bold mb-8 text-blue-400">{siteConfig.name} Admin</div>
+      <nav class="flex flex-col gap-1">
+        <a href="/admin" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">Dashboard</a>
+        <a href="/admin/feeds" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">RSS Feeds</a>
+        <a href="/admin/jobs" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">Ingestion Jobs</a>
+        <a href="/admin/trends" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">Trends</a>
+        <hr class="border-slate-700 my-4" />
+        <a href="/" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg">Back to Site</a>
+      </nav>
+    </aside>
+    <div class="flex-1 p-8">
+      <slot />
+    </div>
+  </body>
+</html>

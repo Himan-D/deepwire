@@ -1,0 +1,33 @@
+---
+export interface Props {
+  name: string;
+  slug: string;
+  description?: string | null;
+  category?: string | null;
+  mentionCount: number;
+  trending: boolean;
+}
+
+const { name, slug, description, category, mentionCount, trending } = Astro.props;
+---
+
+<a href={`/company/${slug}`} class="news-card p-5 block">
+  <div class="flex items-start justify-between mb-2">
+    <h3 class="font-bold text-lg">{name}</h3>
+    {trending && (
+      <span class="text-xs font-medium text-[var(--green)]">Trending</span>
+    )}
+  </div>
+  {description && (
+    <p class="text-sm text-[var(--text-secondary)] line-clamp-2 mb-3">{description}</p>
+  )}
+  <div class="flex items-center gap-3 text-xs text-[var(--text-tertiary)]">
+    <span>{mentionCount} mentions</span>
+    {category && (
+      <>
+        <span>·</span>
+        <span class="category-tag category-{category}">{category}</span>
+      </>
+    )}
+  </div>
+</a>
