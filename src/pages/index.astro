@@ -5,7 +5,7 @@ import NewsCard from "../components/news/NewsCard.astro";
 import TrendingTopics from "../components/news/TrendingTopics.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { categories } from "../config";
-import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics, getTodayArticles, getTopEntities } from "../lib/data";
+import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics, getTodayArticles, getTopEntities, getAllArticles } from "../lib/data";
 
 const topStories = getTopStories(15);
 const trending = getTrendingArticles(4);
@@ -19,6 +19,12 @@ const spaceArticles = getArticlesByCategory("space", 4);
 const semiconductorsArticles = getArticlesByCategory("semiconductors", 4);
 const roboticsArticles = getArticlesByCategory("robotics", 4);
 const trendTopics = getTrendTopics();
+
+function categoryCount(cat: string): number {
+  return topStories.length > 0
+    ? getAllArticles().filter((a) => a.category === cat).length
+    : 0;
+}
 const topCompanies = getTopEntities("company", 5);
 const topPeople = getTopEntities("person", 5);
 ---
@@ -128,12 +134,7 @@ const topPeople = getTopEntities("person", 5);
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         {categories.filter(c => ["security", "space", "semiconductors", "robotics"].includes(c.id)).map((cat) => {
-          const count = {
-            security: securityArticles.length,
-            space: spaceArticles.length,
-            semiconductors: semiconductorsArticles.length,
-            robotics: roboticsArticles.length,
-          }[cat.id] || 0;
+          const count = categoryCount(cat.id);
           return (
             <a href={`/${cat.id}`} class="news-card p-6 text-center block hover:border-[var(--accent)] transition-colors">
               <h3 class="font-semibold text-base">{cat.label}</h3>
