@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsCard from "../../components/news/NewsCard.astro";
+import { getArticles, getSources, slugify } from "../../lib/data";
+
+export async function getStaticPaths() {
+  const sources = getSources();
+  return sources.map((s) => ({
+    params: { slug: slugify(s.name) },
+    props: { sourceName: s.name },
+  }));
+}
+
+const { sourceName } = Astro.props;
+const articles = getArticles({ source: sourceName, limit: 50 });
+---
+
+<BaseLayout title={sourceName}>
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+      <span class="text-xs font-semibold tracking-wide uppercase text-[var(--accent)]">Source</span>
+      <h1 class="text-3xl font-bold mt-2">{sourceName}</h1>
+      <p class="text-sm text-[var(--text-secondary)] mt-1">{articles.length} articles</p>
+    </div>
+
+    <div class="space-y-3">
+      {articles.map((a) => (
+        <NewsCard {...a} publicationDate={new Date(a.publicationDate)} />
+      ))}
+    </div>
+
+    {articles.length === 0 && (
+      <p class="text-center py-16 text-[var(--text-tertiary)]">No articles from this source.</p>
+    )}
+  </div>
+</BaseLayout>

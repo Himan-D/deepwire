@@ -47,7 +47,20 @@ function initSchema(db: Database.Database) {
       last_fetched TEXT,
       enabled INTEGER DEFAULT 1
     );
+
+    CREATE VIRTUAL TABLE IF NOT EXISTS articles_fts USING fts5(
+      title, excerpt, content, source, category,
+      content='articles', content_rowid='id'
+    );
   `);
+
+  const count = db.prepare("SELECT COUNT(*) as c FROM articles_fts").get() as any;
+  if (count.c === 0) {
+    console.log("Building FTS5 search index...");
+    db.exec(`INSERT INTO articles_fts(rowid, title, excerpt, content, source, category)
+              SELECT id, title, excerpt, content, source, category FROM articles`);
+    console.log("FTS5 index built");
+  }
 }
 
 export function importFromJson() {

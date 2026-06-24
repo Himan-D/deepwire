@@ -1,0 +1,1706 @@
+[
+  {
+    "id": "cluster-0",
+    "title": "Improving health intelligence in ChatGPT",
+    "articles": [
+      8,
+      1073
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-18T11:00:00.000Z",
+      "to": "2026-06-18T18:16:12.000Z"
+    }
+  },
+  {
+    "id": "cluster-1",
+    "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
+    "articles": [
+      9,
+      1076
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-18T08:00:00.000Z",
+      "to": "2026-06-18T15:06:56.000Z"
+    }
+  },
+  {
+    "id": "cluster-2",
+    "title": "Built to benefit everyone: our plan",
+    "articles": [
+      27,
+      917
+    ],
+    "category": "ai",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-08T01:30:00.000Z",
+      "to": "2026-06-08T20:55:27.000Z"
+    }
+  },
+  {
+    "id": "cluster-3",
+    "title": "Shipping huggingface_hub every week with AI, open tools, and a human in the loop",
+    "articles": [
+      32,
+      33,
+      35,
+      37,
+      38,
+      42,
+      43,
+      45,
+      46,
+      48,
+      50,
+      54,
+      55,
+      56,
+      57,
+      59
+    ],
+    "category": "ai",
+    "sourceCount": 16,
+    "dateRange": {
+      "from": "2026-05-19T00:00:00.000Z",
+      "to": "2026-06-23T00:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-4",
+    "title": "The Download: AI bottleneck debates, and BCI trials take off",
+    "articles": [
+      154,
+      155
+    ],
+    "category": "llms",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-19T10:40:24.000Z",
+      "to": "2026-06-19T12:10:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-5",
+    "title": "Claude Tag",
+    "articles": [
+      163,
+      169,
+      172
+    ],
+    "category": "ai",
+    "sourceCount": 3,
+    "dateRange": {
+      "from": "2026-06-23T14:03:19.000Z",
+      "to": "2026-06-23T17:09:18.000Z"
+    }
+  },
+  {
+    "id": "cluster-6",
+    "title": "A Gated Graph Neural Network Approach to Fast-Convergent Dynamic Average Estimation",
+    "articles": [
+      227,
+      1712
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-18T21:39:33Z",
+      "to": "2026-06-23T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-7",
+    "title": "Is Our Benchmark Enough? An Analysis of Continual Learning for MLLMs",
+    "articles": [
+      229,
+      1245
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-18T21:58:05Z",
+      "to": "2026-06-23T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-8",
+    "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
+    "articles": [
+      383,
+      392
+    ],
+    "category": "ai",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-05-20T20:40:00.000Z",
+      "to": "2026-06-11T20:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-9",
+    "title": "Gemini 3.5: frontier intelligence with action",
+    "articles": [
+      398,
+      422
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-05-15T22:50:12.000Z",
+      "to": "2026-05-19T17:45:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-10",
+    "title": "Fluid, natural voice translation with Gemini 3.5 Live Translate",
+    "articles": [
+      405,
+      1113
+    ],
+    "category": "llms",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-09T15:16:25.000Z",
+      "to": "2026-06-09T15:18:24.000Z"
+    }
+  },
+  {
+    "id": "cluster-11",
+    "title": "Today's NYT Mini Crossword Answers for Wednesday, June 24",
+    "articles": [
+      481,
+      486,
+      487,
+      488
+    ],
+    "category": "ai",
+    "sourceCount": 4,
+    "dateRange": {
+      "from": "2026-06-23T20:03:08.000Z",
+      "to": "2026-06-24T03:03:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-12",
+    "title": "These are the best Prime Day monitor deals live now - get them before it's too late",
+    "articles": [
+      515,
+      771
+    ],
+    "category": "ai",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T12:21:42.000Z",
+      "to": "2026-06-23T23:41:06.000Z"
+    }
+  },
+  {
+    "id": "cluster-13",
+    "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+    "articles": [
+      556,
+      1160
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:46:56Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-14",
+    "title": "Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs",
+    "articles": [
+      557,
+      1159
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:57:59Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-15",
+    "title": "Critique of Agent Model",
+    "articles": [
+      558,
+      1158
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T22:50:02Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-16",
+    "title": "Reinforcement Learning Towards Broadly and Persistently Beneficial Models",
+    "articles": [
+      560,
+      1157
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T23:35:49Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-17",
+    "title": "Can Language Model Agents be Helpful Circuit Explainers in Mechanistic Interpretability?",
+    "articles": [
+      561,
+      1958
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T00:04:31Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-18",
+    "title": "Ensemble Feature Selection and Harris Hawks Optimization for Explainable Mental Health Risk Prediction in Female Sex Workers",
+    "articles": [
+      563,
+      1156
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T01:19:19Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-19",
+    "title": "Exploring Academic Influence of Algorithms by Co-occurrence Network Based on Full-text of Academic Papers",
+    "articles": [
+      565,
+      1155
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T03:26:39Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-20",
+    "title": "VeryTrace: Verifying Reasoning Traces through Compilable Formalism and Structured Verification",
+    "articles": [
+      567,
+      1944
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T04:15:48Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-21",
+    "title": "The Geometry Behind Diffusion and Flow Matching: Gradient Flows and Geodesics in Wasserstein Space",
+    "articles": [
+      570,
+      1940
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:25:24Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-22",
+    "title": "An Introduction to Causal Reinforcement Learning",
+    "articles": [
+      571,
+      1939
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:28:33Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-23",
+    "title": "Exploring the relationship between human-centric AI and firm idiosyncratic risks",
+    "articles": [
+      574,
+      1154
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T07:10:59Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-24",
+    "title": "FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning",
+    "articles": [
+      575,
+      1928
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T07:21:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-25",
+    "title": "SP-Mind: An Autonomous Reasoning Agent for Spatial Proteomics Analysis",
+    "articles": [
+      576,
+      1153
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T07:24:23Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-26",
+    "title": "Probing the Misaligned Thinking Process of Language Models",
+    "articles": [
+      578,
+      1926
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T07:40:28Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-27",
+    "title": "Prob-BBDM: a Probabilistic Brownian Bridge Diffusion Model for MRI sequence image-to-image translation",
+    "articles": [
+      581,
+      1151
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T08:47:17Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-28",
+    "title": "PHANTOM: A Large-Scale Dataset of Multimodal Adversarial Attacks for Vision-Language Models",
+    "articles": [
+      585,
+      1380
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T10:20:40Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-29",
+    "title": "One Ruler: A Same-Hands Re-Evaluation of Bivariate Causal Direction on Tuebingen, with a Parameter-Free Compression Baseline",
+    "articles": [
+      592,
+      1516
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T15:43:19Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-30",
+    "title": "Deciphering Fingerprints of 3D Molecular Surfaces for Accurate Epitope Prediction",
+    "articles": [
+      593,
+      1466
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:14:14Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-31",
+    "title": "Reconstructing GRACE Terrestrial Water Storage with Spatio-Temporal Graph Neural Networks: An Application to South America",
+    "articles": [
+      594,
+      1465
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:15:58Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-32",
+    "title": "The Degeneracy Distillery",
+    "articles": [
+      595,
+      1464
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:18:09Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-33",
+    "title": "Machine Learning Modeling for Real-Time Melt Pool Monitoring in Laser Powder Bed Fusion Additive Manufacturing: A Hybrid Approach",
+    "articles": [
+      596,
+      1463
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:38:29Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-34",
+    "title": "Sesame: Structure-Aware Molecular Generation via Spatial Density-Map Conditioning",
+    "articles": [
+      597,
+      1461
+    ],
+    "category": "space",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:48:10Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-35",
+    "title": "Are Safety Guarantees in Neural Networks Safe? How to Compute Trustworthy Robustness Certifications",
+    "articles": [
+      598,
+      1161
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:50:52Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-36",
+    "title": "Exact Schur-Sylvester Dimensionality Reductions for Non-Smooth Stochastic Complexity and Manifold Sampling",
+    "articles": [
+      599,
+      1459
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:09:25Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-37",
+    "title": "Federated Survival Analysis in Healthcare: A Multi-Model Evaluation on Cross-Institutional Heterogeneous Breast Cancer Data",
+    "articles": [
+      600,
+      1457
+    ],
+    "category": "startups",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:14:51Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-38",
+    "title": "MGI: Member vs Generated Inference",
+    "articles": [
+      601,
+      1456
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:15:26Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-39",
+    "title": "GRACE: Gated Refinement for Accurate Causal Edge Discovery in High-Dimensional Time Series",
+    "articles": [
+      602,
+      1454
+    ],
+    "category": "startups",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:26:38Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-40",
+    "title": "ARIA: Adaptive Region-Based Importance Allocation for Conditional Diffusion Distillation",
+    "articles": [
+      603,
+      1453
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:54:25Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-41",
+    "title": "Closing the Loop: Formally Verified Law as a Reward Signal for Self-Improving Legal AI",
+    "articles": [
+      604,
+      1451
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:21:49Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-42",
+    "title": "Catastrophic Compositional Generation: Why Vanilla Diffusion Models Fail to Extrapolate",
+    "articles": [
+      605,
+      1449
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:34:26Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-43",
+    "title": "KLip-PPO: A per-sample KL perspective on PPO-Clip",
+    "articles": [
+      606,
+      1448
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:52:03Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-44",
+    "title": "DREG: A Layer-Wise Jacobian Regularization as a General-Purpose Penalty",
+    "articles": [
+      607,
+      1443
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:04:45Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-45",
+    "title": "Learning the Koopman Operator using Attention Free Transformers",
+    "articles": [
+      608,
+      1441
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:36:55Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-46",
+    "title": "Forget Without Compromise: Nexus Sampling for Streaming KV-Cache Eviction Under Fixed Budgets",
+    "articles": [
+      609,
+      1439
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:42:51Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-47",
+    "title": "3D Masked Autoencoders are Robust Learners of Volumetric and Multimodal Cellular Representations for Microscopy",
+    "articles": [
+      610,
+      1438
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:45:15Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-48",
+    "title": "A Comparative Study of Bayesian Contextual Bandits for Real-Time Warehouse Sorter Optimization",
+    "articles": [
+      611,
+      1436
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T22:07:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-49",
+    "title": "Offline Reinforcement Learning for Warehouse SLAM Throughput Control",
+    "articles": [
+      612,
+      1435
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T22:10:06Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-50",
+    "title": "Learning to Trigger: Reinforcement Learning at the Large Hadron Collider",
+    "articles": [
+      613,
+      1433
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T22:56:33Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-51",
+    "title": "EMAgnet: Parameter-Space EMA Regularization for Policy Gradient Self-Play in Large Games",
+    "articles": [
+      614,
+      1432
+    ],
+    "category": "security",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T23:05:01Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-52",
+    "title": "Cyclic Denoising Reveals Ultrastable Memories in Diffusion Models",
+    "articles": [
+      615,
+      1431
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T23:11:38Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-53",
+    "title": "Verifiable Foundation Models for Robot Safety",
+    "articles": [
+      616,
+      1611
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T03:10:51Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-54",
+    "title": "Engineering Reliable Autonomous Systems: Challenges and Solutions",
+    "articles": [
+      617,
+      1596
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T10:04:37Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-55",
+    "title": "Enforcing Human-like Kinematics in Dexterous Piano Playing via Adversarial Posture Regularization",
+    "articles": [
+      618,
+      1563
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:30:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-56",
+    "title": "Topological Online Learning for Displacement-based Formation Control",
+    "articles": [
+      619,
+      1562
+    ],
+    "category": "robotics",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:57:23Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-57",
+    "title": "Sim-to-Real Betting on the E-Process: Bringing \"simulators\" to anytime-valid confidence sequences",
+    "articles": [
+      620,
+      1561
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T00:38:41Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-58",
+    "title": "TurboMPC: Fast, Scalable, and Differentiable Model Predictive Control on the GPU",
+    "articles": [
+      621,
+      1560
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T00:42:33Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-59",
+    "title": "SPACE: Enabling Learning from Cross-Robot Data Toward Generalist Policies",
+    "articles": [
+      622,
+      1559
+    ],
+    "category": "space",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T01:32:40Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-60",
+    "title": "MinInter: Minimizing Trajectory Interpolation During Data Augmentation for Imitation Learning",
+    "articles": [
+      623,
+      1557
+    ],
+    "category": "robotics",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:47:11Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-61",
+    "title": "DynaWM: Dynamics-Aware Distillation with World Model and Momentum Targets for Smooth Locomotion over Continuous Stairs",
+    "articles": [
+      624,
+      1556
+    ],
+    "category": "robotics",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T03:07:42Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-62",
+    "title": "NavWM: A Unified Navigation World Model for Foresight-Driven Planning",
+    "articles": [
+      625,
+      1555
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T03:30:20Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-63",
+    "title": "The Evaluation Cost of Task Specialization in Evolutionary Multi-Robot Systems",
+    "articles": [
+      626,
+      1553
+    ],
+    "category": "security",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T06:20:54Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-64",
+    "title": "Grounding Generative Policies in Physics: Optimization-Guided Diffusion for Robot Control",
+    "articles": [
+      627,
+      1551
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T06:49:30Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-65",
+    "title": "RoBoSR: Structured Scene Representations for Embodied Robotic Reasoning",
+    "articles": [
+      628,
+      1549
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T09:24:52Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-66",
+    "title": "SlipSense: Multimodal Sensing for Online Slip Detection in Legged Robots",
+    "articles": [
+      629,
+      1548
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T09:40:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-67",
+    "title": "PDS Joint: A Parametric Double-Spiral Joint Tailored for Dexterous Hands",
+    "articles": [
+      630,
+      1547
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T10:09:02Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-68",
+    "title": "RE4: Transformation-aware Imitation of Object Interactions Using Manipulation Modes",
+    "articles": [
+      631,
+      1378
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T10:37:50Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-69",
+    "title": "Legible and Intuitive Multi-modal Robot State and Intent Communication Validated in Online and Real-world Studies",
+    "articles": [
+      632,
+      1545
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T11:27:17Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-70",
+    "title": "Supervise What Survives: Geometry-Guided VLA Adaptation from Synthetic Robot Videos",
+    "articles": [
+      633,
+      1544
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T11:35:13Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-71",
+    "title": "NoContactNoWorries: Estimating Contact through Vision and Proprioception for In-Hand Dexterous Manipulation",
+    "articles": [
+      634,
+      1543
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T11:36:46Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-72",
+    "title": "Varying Bundle Size Reactive Multi-Task Assignment using Selective Cost Estimation for Multi-Agent Systems",
+    "articles": [
+      635,
+      1542
+    ],
+    "category": "space",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T11:55:20Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-73",
+    "title": "FT-WBC: Learning Fault-Tolerant Whole-Body Control for Legged Loco-Manipulation",
+    "articles": [
+      636,
+      1541
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T11:58:45Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-74",
+    "title": "G$^3$VLA: Geometric inductive bias for Vision-Language-Action Models",
+    "articles": [
+      637,
+      1540
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T12:02:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-75",
+    "title": "Decentralized Pose Graph Riemannian Optimization for Object-based Multi-Robot SLAM",
+    "articles": [
+      638,
+      1539
+    ],
+    "category": "security",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T12:21:34Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-76",
+    "title": "Explaining Failures of Cyber-Physical Systems with Actual Causality",
+    "articles": [
+      639,
+      1538
+    ],
+    "category": "security",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T13:13:06Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-77",
+    "title": "Enabling Robust Cloth Manipulation via Inference-Time Simulator-in-the-Loop Refinement",
+    "articles": [
+      640,
+      1537
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T13:20:12Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-78",
+    "title": "ArtiTwinSplat: Interactable Digital Twin Reconstruction via Gaussian Splatting from RGB-D videos",
+    "articles": [
+      641,
+      1536
+    ],
+    "category": "robotics",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T14:24:07Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-79",
+    "title": "Optimization-based Safe Trajectory Planning for Autonomous Ground Vehicle in Multi-Floor Scenarios",
+    "articles": [
+      642,
+      1535
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T14:26:22Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-80",
+    "title": "Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation",
+    "articles": [
+      643,
+      1533
+    ],
+    "category": "robotics",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T14:27:10Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-81",
+    "title": "TACTFUL: Tactile-Driven Exploration For Object Localization and Identification in Confined Environments",
+    "articles": [
+      644,
+      1532
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T15:33:51Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-82",
+    "title": "World Value Models for Robotic Manipulation",
+    "articles": [
+      645,
+      1531
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T16:07:48Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-83",
+    "title": "HANCLIP: A Family of Hyperbolic Angular Negation Vision Language Models",
+    "articles": [
+      651,
+      1981
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T18:25:37Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-84",
+    "title": "Mind the Heads: Topological Representation Alignment for Multimodal LLMs",
+    "articles": [
+      652,
+      1974
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:30:30Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-85",
+    "title": "VisChronos: Revolutionizing Image Captioning Through Real-Life Events",
+    "articles": [
+      660,
+      1954
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:05:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-86",
+    "title": "ObsGraph: Hierarchical Observation Representation for Embodied Reasoning and Exploration",
+    "articles": [
+      662,
+      1558
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:17:08Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-87",
+    "title": "Fabric Image Demoir\\'eing Benchmark from Synthesis to Restoration",
+    "articles": [
+      663,
+      1951
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:29:51Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-88",
+    "title": "Autonomous Video Generation with Counterfactual Controllability for Self-Evolving World Models",
+    "articles": [
+      675,
+      1408
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:19:47Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-89",
+    "title": "Ground Then Rank: Revisiting Knowledge-Based VQA with Training-Free Entity Identification",
+    "articles": [
+      681,
+      1977
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:27:00Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-90",
+    "title": "One Year Later...The Harms Persist, But So Do We!",
+    "articles": [
+      682,
+      1975
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T19:30:14Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-91",
+    "title": "Do LLM Attribution Metrics Transfer? Auditing Retrieval-Augmented Generation Evaluation Across Datasets and Constructs",
+    "articles": [
+      683,
+      1450
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:25:36Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-92",
+    "title": "When Retrieval Metrics Mislead: Measuring Policy Signal in Long-Horizon Tool-Use Agents",
+    "articles": [
+      684,
+      1446
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T20:57:11Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-93",
+    "title": "QuechuaTok: Morphological Boundary Accuracy as a Necessary Metric for Tokenizer Evaluation in Agglutinative Low-Resource Languages",
+    "articles": [
+      685,
+      1967
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:04:48Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-94",
+    "title": "Layer-wise Probing of wav2vec 2.0 and Whisper for Consonant Cluster Reduction in African American English",
+    "articles": [
+      686,
+      1966
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:19:03Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-95",
+    "title": "Does My Embedding Reflect That $A = B$? Evaluating Mathematical Equivalence in Embedding Models",
+    "articles": [
+      687,
+      1440
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T21:37:58Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-96",
+    "title": "Faithful by Construction: Claim-Anchored Attribution for Multi-Document Summarization",
+    "articles": [
+      688,
+      1962
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T22:39:08Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-97",
+    "title": "RASC+: Retrieval-Constrained LLM Adjudication for Clinical Value Set Authoring",
+    "articles": [
+      689,
+      1434
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T22:51:22Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-98",
+    "title": "Towards Spec Learning: Inference-Time Alignment from Preference Pairs",
+    "articles": [
+      690,
+      1959
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-22T23:21:55Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-99",
+    "title": "Towards Version-aware Operations and Transaction Memories for Multi-layer MeMo",
+    "articles": [
+      691,
+      1956
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T00:53:14Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-100",
+    "title": "Best Preprocessing Techniques for Sentiment Analysis",
+    "articles": [
+      692,
+      1423
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:00:16Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-101",
+    "title": "Selective Capability Unlearning in End-to-End Spoken Language Understanding",
+    "articles": [
+      693,
+      1953
+    ],
+    "category": "space",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:13:00Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-102",
+    "title": "Sentence-Level Contextual Entrainment in Large Language Models",
+    "articles": [
+      694,
+      1950
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:42:33Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-103",
+    "title": "CAVEWOMAN: How Large Language Models Behave Under Linguistic Input and Output Compression",
+    "articles": [
+      695,
+      1419
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T02:56:48Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-104",
+    "title": "Predicting Poets' Origins from Verse: A Computational Analysis of Regional Linguistic Fingerprints in the Complete Tang Poems",
+    "articles": [
+      696,
+      1416
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T03:17:44Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-105",
+    "title": "PORTER: Language-Grounded Event Representations for Portable Structured EHR Foundation Models",
+    "articles": [
+      697,
+      1415
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T03:33:25Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-106",
+    "title": "Metis: Bridging Text and Code Memory for Self-Evolving Agents",
+    "articles": [
+      698,
+      1942
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:17:22Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-107",
+    "title": "MedBench v5: A Dynamic, Process-Oriented, and Hallucination-Aware Benchmark for Clinical Multimodal Models",
+    "articles": [
+      699,
+      1941
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:23:46Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-108",
+    "title": "BehaviorBench: Benchmarking Foundation Models for Behavioral Science Tasks",
+    "articles": [
+      700,
+      1407
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:30:54Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-109",
+    "title": "A P\\={a}ninian Foundation for Indic Language Processing",
+    "articles": [
+      701,
+      1405
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:53:37Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-110",
+    "title": "A Synthetic Reliability-Aware PINN Benchmark for Offshore Wind Turbine Support-Structure Monitoring with Bayesian Inverse Identification",
+    "articles": [
+      702,
+      1937
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T05:55:45Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-111",
+    "title": "Aspect-Based Sentiment Evolution and its Correlation with Review Rounds in Multi-Round Peer Reviews: A Deep Learning Approach",
+    "articles": [
+      703,
+      1935
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T06:14:00Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-112",
+    "title": "MMed-Bench-IR: A Heterogeneous Benchmark for Multilingual Medical Information Retrieval",
+    "articles": [
+      704,
+      1932
+    ],
+    "category": "startups",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T06:41:13Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-113",
+    "title": "Decoherence as Defence and the Magnitude of Noise Regularisation: A Rigorous N -Qubit Theory of Stochastic Quantum Neural Networks for Adversarially Robust Network Intrusion Detection",
+    "articles": [
+      705,
+      1929
+    ],
+    "category": "research",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T07:06:56Z",
+      "to": "2026-06-24T04:00:00.000Z"
+    }
+  },
+  {
+    "id": "cluster-114",
+    "title": "Friday Squid Blogging: Victims of Unregulated Squid Fishing",
+    "articles": [
+      708,
+      715
+    ],
+    "category": "security",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-12T21:05:03.000Z",
+      "to": "2026-06-19T21:03:48.000Z"
+    }
+  },
+  {
+    "id": "cluster-115",
+    "title": " Best Amazon Prime Day gaming laptop PC deals 2026 — epic discounts on Dell, Alienware, MSI, ROG, and others ",
+    "articles": [
+      753,
+      761
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T14:56:42.000Z",
+      "to": "2026-06-23T17:19:10.000Z"
+    }
+  },
+  {
+    "id": "cluster-116",
+    "title": "Video Friday: Do Robots Even Need Legs?",
+    "articles": [
+      777,
+      782,
+      786,
+      788,
+      789,
+      797,
+      799,
+      802,
+      803
+    ],
+    "category": "research",
+    "sourceCount": 9,
+    "dateRange": {
+      "from": "2026-04-24T16:30:02.000Z",
+      "to": "2026-06-19T15:00:02.000Z"
+    }
+  },
+  {
+    "id": "cluster-117",
+    "title": "Table tennis robot defeats some of world’s best players – why this has major implications for robotics",
+    "articles": [
+      837,
+      848
+    ],
+    "category": "semiconductors",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-04-22T15:09:41.000Z",
+      "to": "2026-05-18T10:38:59.000Z"
+    }
+  },
+  {
+    "id": "cluster-118",
+    "title": "RT by @elonmusk: Elon Musk just confirmed that ‘Starmind’ will be the official name of the SpaceX AI satellite constellation",
+    "articles": [
+      987,
+      994
+    ],
+    "category": "space",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-23T23:52:32.000Z",
+      "to": "2026-06-23T23:56:29.000Z"
+    }
+  },
+  {
+    "id": "cluster-119",
+    "title": "R to @github: Install Copilot CLI and stay in the flow. 👇 https://github.com/features/copilot/cli?utm_source=x-new-tui-announcement&utm_medium=social&utm_campaign=dev-pod-copilot-cli-2026",
+    "articles": [
+      1044,
+      1051
+    ],
+    "category": "cloud",
+    "sourceCount": 2,
+    "dateRange": {
+      "from": "2026-06-19T19:30:13.000Z",
+      "to": "2026-06-23T17:27:24.000Z"
+    }
+  }
+]

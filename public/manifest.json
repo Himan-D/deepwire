@@ -1,0 +1,12 @@
+{
+  "name": "Deepwire",
+  "short_name": "Deepwire",
+  "description": "AI & DeepTech news intelligence",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0e0d",
+  "theme_color": "#E85D2A",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -33,3 +33,15 @@ export function formatDate(date: Date): string {
     year: "numeric",
   });
 }
+
+export function readingTime(text: string): string {
+  const words = text.replace(/<[^>]*>/g, "").split(/\s+/).length;
+  const minutes = Math.max(1, Math.ceil(words / 200));
+  return `${minutes} min read`;
+}
+
+export function estimateReadTime(content: string): string {
+  const words = content.replace(/<[^>]*>/g, "").split(/\s+/).length;
+  const mins = Math.max(1, Math.ceil(words / 200));
+  return `${mins} min read`;
+}

@@ -177,3 +177,15 @@ export function getRelatedArticles(id: number, limit: number = 5): Article[] {
     .slice(0, limit)
     .map((r) => r.article);
 }
+
+export function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export function getSourceBySlug(slug: string): string | undefined {
+  const sources = getSources();
+  return sources.find((s) => slugify(s.name) === slug)?.name;
+}

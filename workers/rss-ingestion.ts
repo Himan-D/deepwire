@@ -79,6 +79,9 @@ async function ingestSource(source: { name: string; feedUrl: string; category: s
       if (!title || title.length < 5) continue;
       if (!content || content.length < 10) continue;
 
+      const dealPattern = /\b(deals?\s|promo\s|coupon|discount|prime\s+day|best\s+(amazon|prime)\s+deals?|save\s+\$|shop\s+these|gadgets?\s+i['’]m\s+buying)\b/i;
+      if (dealPattern.test(title)) continue;
+
       const categories = classifyArticle(title, content);
       const rawCategory = getPrimaryCategory(title, content, source.name);
       const primaryCategory = categoryMapping[rawCategory] || rawCategory;

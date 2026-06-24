@@ -75,3 +75,27 @@ jobs:
         run: |
           git add -A
           git diff --staged --quiet || (git config user.name "deepwire-bot" && git config user.email "bot@deepwire.ai" && git commit -m "chore: :robot: crawl full article content" && git push)
+
+  analyze:
+    needs: crawl
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cluster articles
+        run: npm run cluster
+
+      - name: Trend analysis
+        run: npm run trends
+
+      - name: Commit analysis
+        run: |
+          git add -A
+          git diff --staged --quiet || (git config user.name "deepwire-bot" && git config user.email "bot@deepwire.ai" && git commit -m "chore: :robot: update clusters and trends" && git push)

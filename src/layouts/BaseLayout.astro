@@ -21,6 +21,7 @@ const { title, description, image } = Astro.props;
     <title>{title ? `${title} — ${siteConfig.name}` : siteConfig.name}</title>
     <meta name="description" content={description || siteConfig.description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta property="og:title" content={title || siteConfig.name} />
     <meta property="og:description" content={description || siteConfig.description} />
     <meta property="og:image" content={image || "/og-default.png"} />
@@ -31,6 +32,11 @@ const { title, description, image } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js");
+      }
+    </script>
   </head>
   <body>
     <Header />
