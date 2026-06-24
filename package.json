@@ -20,6 +20,10 @@
     "process": "tsx workers/article-processing.ts",
     "cluster": "tsx workers/clustering.ts",
     "trends": "tsx workers/trend-analysis.ts",
+    "github-trends": "tsx workers/github-trending.ts",
+    "hf-models": "tsx workers/hf-models.ts",
+    "knowledge-graph": "tsx workers/knowledge-graph.ts",
+    "analyze-all": "npm run cluster && npm run trends && npm run github-trends && npm run hf-models && npm run knowledge-graph",
     "astro": "astro"
   },
   "dependencies": {

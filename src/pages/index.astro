@@ -5,10 +5,12 @@ import NewsCard from "../components/news/NewsCard.astro";
 import TrendingTopics from "../components/news/TrendingTopics.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { categories } from "../config";
-import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics } from "../lib/data";
+import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics, getTodayArticles, getTopEntities } from "../lib/data";
 
 const topStories = getTopStories(15);
 const trending = getTrendingArticles(4);
+const todayArticles = getTodayArticles();
+const todayCount = todayArticles.length;
 const aiArticles = getArticlesByCategory("ai", 6);
 const researchArticles = getArticlesByCategory("research", 4);
 const startupArticles = getArticlesByCategory("startups", 4);
@@ -17,6 +19,8 @@ const spaceArticles = getArticlesByCategory("space", 4);
 const semiconductorsArticles = getArticlesByCategory("semiconductors", 4);
 const roboticsArticles = getArticlesByCategory("robotics", 4);
 const trendTopics = getTrendTopics();
+const topCompanies = getTopEntities("company", 5);
+const topPeople = getTopEntities("person", 5);
 ---
 
 <BaseLayout title="Home">
@@ -30,6 +34,33 @@ const trendTopics = getTrendTopics();
     importanceScore: a.importanceScore,
     imageUrl: a.imageUrl,
   }))} />
+
+  {todayCount > 0 && (
+    <section class="mb-10 p-4 border border-[var(--border-color)] rounded-lg bg-[var(--bg-secondary)]">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" />
+        <h2 class="text-sm font-semibold tracking-wide uppercase text-[var(--accent)]">
+          Today in AI — {todayCount} new {todayCount === 1 ? "story" : "stories"}
+        </h2>
+      </div>
+      <div class="space-y-3">
+        {todayArticles.slice(0, 5).map((article) => (
+          <NewsCard
+            id={article.id}
+            title={article.title}
+            url={article.url}
+            source={article.source}
+            author={article.author}
+            excerpt={article.excerpt}
+            category={article.category}
+            publicationDate={new Date(article.publicationDate)}
+            importanceScore={article.importanceScore}
+            imageUrl={article.imageUrl}
+          />
+        ))}
+      </div>
+    </section>
+  )}
 
   <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
     <div>
@@ -114,8 +145,39 @@ const trendTopics = getTrendTopics();
     </div>
 
     <aside class="max-lg:hidden">
-      <div class="sticky top-24">
-        <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      <div class="sticky top-24 space-y-6">
+        <TrendingTopics trends={trendTopics.slice(0, 8)} period="trending" />
+
+        {topCompanies.length > 0 && (
+          <div class="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)]">
+            <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-3">Top Companies</h3>
+            <div class="space-y-2">
+              {topCompanies.map((entity) => (
+                <a
+                  href={`/company/${entity.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  class="flex items-center justify-between text-sm py-1 hover:text-[var(--accent)] transition-colors"
+                >
+                  <span class="truncate">{entity.name}</span>
+                  <span class="text-xs text-[var(--text-tertiary)] ml-2 shrink-0">{entity.articleCount}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {topPeople.length > 0 && (
+          <div class="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)]">
+            <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-3">Key People</h3>
+            <div class="space-y-2">
+              {topPeople.map((entity) => (
+                <div class="flex items-center justify-between text-sm py-1">
+                  <span class="truncate capitalize">{entity.name}</span>
+                  <span class="text-xs text-[var(--text-tertiary)] ml-2 shrink-0">{entity.articleCount}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </aside>
   </div>

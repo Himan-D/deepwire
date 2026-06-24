@@ -1,0 +1,4343 @@
+{
+  "nodes": [
+    {
+      "id": "topic:research",
+      "type": "topic",
+      "name": "research",
+      "articleCount": 1295,
+      "lastSeen": "2026-06-24T05:39:38.000Z"
+    },
+    {
+      "id": "topic:ai",
+      "type": "topic",
+      "name": "ai",
+      "articleCount": 413,
+      "lastSeen": "2026-06-24T06:48:41.000Z"
+    },
+    {
+      "id": "arXiv AI",
+      "type": "source",
+      "name": "arXiv AI",
+      "articleCount": 260,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "arXiv ML",
+      "type": "source",
+      "name": "arXiv ML",
+      "articleCount": 253,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "arXiv Robotics",
+      "type": "source",
+      "name": "arXiv Robotics",
+      "articleCount": 222,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "topic:semiconductors",
+      "type": "topic",
+      "name": "semiconductors",
+      "articleCount": 218,
+      "lastSeen": "2026-06-24T06:51:55.000Z"
+    },
+    {
+      "id": "topic:space",
+      "type": "topic",
+      "name": "space",
+      "articleCount": 194,
+      "lastSeen": "2026-06-24T06:08:30.000Z"
+    },
+    {
+      "id": "arXiv Computer Vision",
+      "type": "source",
+      "name": "arXiv Computer Vision",
+      "articleCount": 180,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "topic:startups",
+      "type": "topic",
+      "name": "startups",
+      "articleCount": 174,
+      "lastSeen": "2026-06-24T07:01:21.000Z"
+    },
+    {
+      "id": "topic:llms",
+      "type": "topic",
+      "name": "llms",
+      "articleCount": 161,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "arXiv Computation",
+      "type": "source",
+      "name": "arXiv Computation",
+      "articleCount": 146,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "topic:robotics",
+      "type": "topic",
+      "name": "robotics",
+      "articleCount": 134,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "topic:security",
+      "type": "topic",
+      "name": "security",
+      "articleCount": 120,
+      "lastSeen": "2026-06-24T07:00:39.000Z"
+    },
+    {
+      "id": "topic:cloud",
+      "type": "topic",
+      "name": "cloud",
+      "articleCount": 106,
+      "lastSeen": "2026-06-24T06:39:14.000Z"
+    },
+    {
+      "id": "co:intel",
+      "type": "company",
+      "name": "intel",
+      "articleCount": 104,
+      "lastSeen": "2026-06-24T06:48:41.000Z"
+    },
+    {
+      "id": "topic:agents",
+      "type": "topic",
+      "name": "agents",
+      "articleCount": 91,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "co:amazon",
+      "type": "company",
+      "name": "amazon",
+      "articleCount": 72,
+      "lastSeen": "2026-06-24T06:51:55.000Z"
+    },
+    {
+      "id": "co:openai",
+      "type": "company",
+      "name": "openai",
+      "articleCount": 65,
+      "lastSeen": "2026-06-23T22:03:18.000Z"
+    },
+    {
+      "id": "co:google",
+      "type": "company",
+      "name": "google",
+      "articleCount": 61,
+      "lastSeen": "2026-06-24T00:00:37.000Z"
+    },
+    {
+      "id": "co:arm",
+      "type": "company",
+      "name": "arm",
+      "articleCount": 49,
+      "lastSeen": "2026-06-24T05:47:46.000Z"
+    },
+    {
+      "id": "Wired",
+      "type": "source",
+      "name": "Wired",
+      "articleCount": 47,
+      "lastSeen": "2026-06-24T05:00:00.000Z"
+    },
+    {
+      "id": "co:anthropic",
+      "type": "company",
+      "name": "anthropic",
+      "articleCount": 43,
+      "lastSeen": "2026-06-24T01:00:00.000Z"
+    },
+    {
+      "id": "Hacker News",
+      "type": "source",
+      "name": "Hacker News",
+      "articleCount": 37,
+      "lastSeen": "2026-06-24T07:01:21.000Z"
+    },
+    {
+      "id": "co:github",
+      "type": "company",
+      "name": "github",
+      "articleCount": 32,
+      "lastSeen": "2026-06-24T02:38:47.000Z"
+    },
+    {
+      "id": "co:aws",
+      "type": "company",
+      "name": "aws",
+      "articleCount": 32,
+      "lastSeen": "2026-06-24T00:05:37.000Z"
+    },
+    {
+      "id": "Space.com",
+      "type": "source",
+      "name": "Space.com",
+      "articleCount": 32,
+      "lastSeen": "2026-06-23T21:00:00.000Z"
+    },
+    {
+      "id": "OpenAI",
+      "type": "source",
+      "name": "OpenAI",
+      "articleCount": 31,
+      "lastSeen": "2026-06-23T17:00:00.000Z"
+    },
+    {
+      "id": "The Hacker News",
+      "type": "source",
+      "name": "The Hacker News",
+      "articleCount": 31,
+      "lastSeen": "2026-06-23T18:20:49.000Z"
+    },
+    {
+      "id": "Hugging Face",
+      "type": "source",
+      "name": "Hugging Face",
+      "articleCount": 30,
+      "lastSeen": "2026-06-23T12:51:55.000Z"
+    },
+    {
+      "id": "co:meta",
+      "type": "company",
+      "name": "meta",
+      "articleCount": 30,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "Tom's Hardware",
+      "type": "source",
+      "name": "Tom's Hardware",
+      "articleCount": 30,
+      "lastSeen": "2026-06-24T06:51:55.000Z"
+    },
+    {
+      "id": "IEEE Spectrum Robotics",
+      "type": "source",
+      "name": "IEEE Spectrum Robotics",
+      "articleCount": 30,
+      "lastSeen": "2026-06-19T15:00:02.000Z"
+    },
+    {
+      "id": "Robohub",
+      "type": "source",
+      "name": "Robohub",
+      "articleCount": 30,
+      "lastSeen": "2026-06-23T10:09:29.000Z"
+    },
+    {
+      "id": "Bloomberg Tech",
+      "type": "source",
+      "name": "Bloomberg Tech",
+      "articleCount": 30,
+      "lastSeen": "2026-06-24T07:34:35.000Z"
+    },
+    {
+      "id": "DeepMind",
+      "type": "source",
+      "name": "DeepMind",
+      "articleCount": 29,
+      "lastSeen": "2026-06-16T21:29:50.000Z"
+    },
+    {
+      "id": "TechCrunch",
+      "type": "source",
+      "name": "TechCrunch",
+      "articleCount": 27,
+      "lastSeen": "2026-06-24T06:26:11.000Z"
+    },
+    {
+      "id": "SpaceNews",
+      "type": "source",
+      "name": "SpaceNews",
+      "articleCount": 27,
+      "lastSeen": "2026-06-24T03:09:48.000Z"
+    },
+    {
+      "id": "co:nvidia",
+      "type": "company",
+      "name": "nvidia",
+      "articleCount": 25,
+      "lastSeen": "2026-06-24T00:05:37.000Z"
+    },
+    {
+      "id": "CNET",
+      "type": "source",
+      "name": "CNET",
+      "articleCount": 25,
+      "lastSeen": "2026-06-24T03:03:00.000Z"
+    },
+    {
+      "id": "co:deepmind",
+      "type": "company",
+      "name": "deepmind",
+      "articleCount": 24,
+      "lastSeen": "2026-06-23T13:52:40.000Z"
+    },
+    {
+      "id": "Ars Technica",
+      "type": "source",
+      "name": "Ars Technica",
+      "articleCount": 24,
+      "lastSeen": "2026-06-23T22:30:57.000Z"
+    },
+    {
+      "id": "The Verge",
+      "type": "source",
+      "name": "The Verge",
+      "articleCount": 21,
+      "lastSeen": "2026-06-23T23:58:13.000Z"
+    },
+    {
+      "id": "MIT Technology Review",
+      "type": "source",
+      "name": "MIT Technology Review",
+      "articleCount": 21,
+      "lastSeen": "2026-06-23T21:00:00.000Z"
+    },
+    {
+      "id": "Google AI",
+      "type": "source",
+      "name": "Google AI",
+      "articleCount": 20,
+      "lastSeen": "2026-06-17T15:00:00.000Z"
+    },
+    {
+      "id": "ZDNet",
+      "type": "source",
+      "name": "ZDNet",
+      "articleCount": 20,
+      "lastSeen": "2026-06-24T01:32:44.000Z"
+    },
+    {
+      "id": "Engadget",
+      "type": "source",
+      "name": "Engadget",
+      "articleCount": 20,
+      "lastSeen": "2026-06-23T23:09:51.000Z"
+    },
+    {
+      "id": "AWS Blog",
+      "type": "source",
+      "name": "AWS Blog",
+      "articleCount": 20,
+      "lastSeen": "2026-06-22T22:40:07.000Z"
+    },
+    {
+      "id": "Andrew Ng",
+      "type": "source",
+      "name": "Andrew Ng",
+      "articleCount": 20,
+      "lastSeen": "2026-06-19T18:34:23.000Z"
+    },
+    {
+      "id": "Demis Hassabis",
+      "type": "source",
+      "name": "Demis Hassabis",
+      "articleCount": 20,
+      "lastSeen": "2026-06-23T21:59:48.000Z"
+    },
+    {
+      "id": "Anthropic @X",
+      "type": "source",
+      "name": "Anthropic @X",
+      "articleCount": 20,
+      "lastSeen": "2026-06-23T17:12:39.000Z"
+    },
+    {
+      "id": "Andrej Karpathy",
+      "type": "source",
+      "name": "Andrej Karpathy",
+      "articleCount": 20,
+      "lastSeen": "2026-06-23T22:26:31.000Z"
+    },
+    {
+      "id": "NVIDIA Blog",
+      "type": "source",
+      "name": "NVIDIA Blog",
+      "articleCount": 19,
+      "lastSeen": "2026-06-24T00:05:37.000Z"
+    },
+    {
+      "id": "Sam Altman",
+      "type": "source",
+      "name": "Sam Altman",
+      "articleCount": 19,
+      "lastSeen": "2026-06-22T18:12:29.000Z"
+    },
+    {
+      "id": "Yann LeCun",
+      "type": "source",
+      "name": "Yann LeCun",
+      "articleCount": 19,
+      "lastSeen": "2026-06-23T08:06:41.000Z"
+    },
+    {
+      "id": "Mira Murati",
+      "type": "source",
+      "name": "Mira Murati",
+      "articleCount": 19,
+      "lastSeen": "2026-05-19T18:01:28.000Z"
+    },
+    {
+      "id": "GitHub",
+      "type": "source",
+      "name": "GitHub",
+      "articleCount": 19,
+      "lastSeen": "2026-06-24T07:25:06.000Z"
+    },
+    {
+      "id": "OpenAI @X",
+      "type": "source",
+      "name": "OpenAI @X",
+      "articleCount": 19,
+      "lastSeen": "2026-06-23T18:10:24.000Z"
+    },
+    {
+      "id": "co:microsoft",
+      "type": "company",
+      "name": "microsoft",
+      "articleCount": 18,
+      "lastSeen": "2026-06-24T02:55:00.000Z"
+    },
+    {
+      "id": "Google DeepMind",
+      "type": "source",
+      "name": "Google DeepMind",
+      "articleCount": 17,
+      "lastSeen": "2026-06-23T13:52:40.000Z"
+    },
+    {
+      "id": "co:oracle",
+      "type": "company",
+      "name": "oracle",
+      "articleCount": 16,
+      "lastSeen": "2026-06-23T20:17:38.000Z"
+    },
+    {
+      "id": "Kareem Carr",
+      "type": "source",
+      "name": "Kareem Carr",
+      "articleCount": 16,
+      "lastSeen": "2026-06-22T17:10:44.000Z"
+    },
+    {
+      "id": "Elon Musk",
+      "type": "source",
+      "name": "Elon Musk",
+      "articleCount": 16,
+      "lastSeen": "2026-06-24T06:09:34.000Z"
+    },
+    {
+      "id": "NASA",
+      "type": "source",
+      "name": "NASA",
+      "articleCount": 15,
+      "lastSeen": "2026-06-24T04:34:37.000Z"
+    },
+    {
+      "id": "Robot Report",
+      "type": "source",
+      "name": "Robot Report",
+      "articleCount": 15,
+      "lastSeen": "2026-06-24T00:12:04.000Z"
+    },
+    {
+      "id": "co:apple",
+      "type": "company",
+      "name": "apple",
+      "articleCount": 13,
+      "lastSeen": "2026-06-24T00:50:00.000Z"
+    },
+    {
+      "id": "co:cohere",
+      "type": "company",
+      "name": "cohere",
+      "articleCount": 13,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "co:spacex",
+      "type": "company",
+      "name": "spacex",
+      "articleCount": 13,
+      "lastSeen": "2026-06-24T06:08:30.000Z"
+    },
+    {
+      "id": "co:elastic",
+      "type": "company",
+      "name": "elastic",
+      "articleCount": 13,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "TechCrunch Startups",
+      "type": "source",
+      "name": "TechCrunch Startups",
+      "articleCount": 13,
+      "lastSeen": "2026-06-22T15:21:42.000Z"
+    },
+    {
+      "id": "co:samsung",
+      "type": "company",
+      "name": "samsung",
+      "articleCount": 11,
+      "lastSeen": "2026-06-24T05:00:56.000Z"
+    },
+    {
+      "id": "Krebs on Security",
+      "type": "source",
+      "name": "Krebs on Security",
+      "articleCount": 10,
+      "lastSeen": "2026-06-23T16:12:49.000Z"
+    },
+    {
+      "id": "Import AI",
+      "type": "source",
+      "name": "Import AI",
+      "articleCount": 10,
+      "lastSeen": "2026-06-22T12:31:45.000Z"
+    },
+    {
+      "id": "Schneier on Security",
+      "type": "source",
+      "name": "Schneier on Security",
+      "articleCount": 10,
+      "lastSeen": "2026-06-23T11:03:07.000Z"
+    },
+    {
+      "id": "SaaStr",
+      "type": "source",
+      "name": "SaaStr",
+      "articleCount": 10,
+      "lastSeen": "2026-06-23T14:10:24.000Z"
+    },
+    {
+      "id": "Azure Blog",
+      "type": "source",
+      "name": "Azure Blog",
+      "articleCount": 10,
+      "lastSeen": "2026-06-16T16:00:00.000Z"
+    },
+    {
+      "id": "topic:quantum",
+      "type": "topic",
+      "name": "quantum",
+      "articleCount": 9,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "VentureBeat",
+      "type": "source",
+      "name": "VentureBeat",
+      "articleCount": 7,
+      "lastSeen": "2026-06-23T18:53:03.000Z"
+    },
+    {
+      "id": "co:canonical",
+      "type": "company",
+      "name": "canonical",
+      "articleCount": 7,
+      "lastSeen": "2026-06-23T16:53:38Z"
+    },
+    {
+      "id": "co:hugging face",
+      "type": "company",
+      "name": "hugging face",
+      "articleCount": 5,
+      "lastSeen": "2026-06-22T13:18:56.000Z"
+    },
+    {
+      "id": "co:amd",
+      "type": "company",
+      "name": "amd",
+      "articleCount": 5,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "co:cisco",
+      "type": "company",
+      "name": "cisco",
+      "articleCount": 5,
+      "lastSeen": "2026-06-23T18:10:24.000Z"
+    },
+    {
+      "id": "co:tesla",
+      "type": "company",
+      "name": "tesla",
+      "articleCount": 4,
+      "lastSeen": "2026-06-23T19:11:04.000Z"
+    },
+    {
+      "id": "co:uber",
+      "type": "company",
+      "name": "uber",
+      "articleCount": 3,
+      "lastSeen": "2026-06-22T22:43:12.000Z"
+    },
+    {
+      "id": "person:mark zuckerberg",
+      "type": "person",
+      "name": "mark zuckerberg",
+      "articleCount": 3,
+      "lastSeen": "2026-06-23T19:19:44.000Z"
+    },
+    {
+      "id": "co:twitter",
+      "type": "company",
+      "name": "twitter",
+      "articleCount": 3,
+      "lastSeen": "2026-06-24T04:00:00.000Z"
+    },
+    {
+      "id": "co:netflix",
+      "type": "company",
+      "name": "netflix",
+      "articleCount": 3,
+      "lastSeen": "2026-06-23T22:03:18.000Z"
+    },
+    {
+      "id": "person:elon musk",
+      "type": "person",
+      "name": "elon musk",
+      "articleCount": 3,
+      "lastSeen": "2026-06-24T06:08:30.000Z"
+    },
+    {
+      "id": "co:xai",
+      "type": "company",
+      "name": "xai",
+      "articleCount": 3,
+      "lastSeen": "2026-06-22T06:31:26Z"
+    },
+    {
+      "id": "co:scale ai",
+      "type": "company",
+      "name": "scale ai",
+      "articleCount": 2,
+      "lastSeen": "2026-06-19T06:15:41Z"
+    },
+    {
+      "id": "co:salesforce",
+      "type": "company",
+      "name": "salesforce",
+      "articleCount": 2,
+      "lastSeen": "2026-06-22T14:01:26.000Z"
+    },
+    {
+      "id": "person:sam altman",
+      "type": "person",
+      "name": "sam altman",
+      "articleCount": 2,
+      "lastSeen": "2026-06-23T22:03:18.000Z"
+    },
+    {
+      "id": "co:palantir",
+      "type": "company",
+      "name": "palantir",
+      "articleCount": 2,
+      "lastSeen": "2026-06-01T15:58:45.000Z"
+    },
+    {
+      "id": "co:linkedin",
+      "type": "company",
+      "name": "linkedin",
+      "articleCount": 1,
+      "lastSeen": "2026-06-23T13:00:00.000Z"
+    },
+    {
+      "id": "co:mistral",
+      "type": "company",
+      "name": "mistral",
+      "articleCount": 1,
+      "lastSeen": "2026-06-23T14:03:19.000Z"
+    },
+    {
+      "id": "co:gitlab",
+      "type": "company",
+      "name": "gitlab",
+      "articleCount": 1,
+      "lastSeen": "2026-06-24T03:17:47.000Z"
+    },
+    {
+      "id": "co:perplexity",
+      "type": "company",
+      "name": "perplexity",
+      "articleCount": 1,
+      "lastSeen": "2026-06-24T00:00:37.000Z"
+    },
+    {
+      "id": "co:adobe",
+      "type": "company",
+      "name": "adobe",
+      "articleCount": 1,
+      "lastSeen": "2026-06-22T14:01:26.000Z"
+    },
+    {
+      "id": "co:ibm",
+      "type": "company",
+      "name": "ibm",
+      "articleCount": 1,
+      "lastSeen": "2026-06-21T12:18:11.000Z"
+    },
+    {
+      "id": "person:satya nadella",
+      "type": "person",
+      "name": "satya nadella",
+      "articleCount": 1,
+      "lastSeen": "2026-06-19T18:34:23.000Z"
+    },
+    {
+      "id": "person:demis hassabis",
+      "type": "person",
+      "name": "demis hassabis",
+      "articleCount": 1,
+      "lastSeen": "2026-06-08T13:30:52.000Z"
+    },
+    {
+      "id": "person:andrej karpathy",
+      "type": "person",
+      "name": "andrej karpathy",
+      "articleCount": 1,
+      "lastSeen": "2026-04-04T16:45:23.000Z"
+    }
+  ],
+  "edges": [
+    {
+      "source": "arXiv AI",
+      "target": "topic:research",
+      "weight": 260,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:research",
+      "weight": 253,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:research",
+      "weight": 222,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:research",
+      "weight": 180,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:research",
+      "weight": 146,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:ai",
+      "weight": 44,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:ai",
+      "weight": 42,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:robotics",
+      "weight": 30,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:intel",
+      "weight": 28,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:research",
+      "weight": 28,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:ai",
+      "weight": 27,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:space",
+      "weight": 27,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:robotics",
+      "weight": 27,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:llms",
+      "weight": 26,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:security",
+      "weight": 26,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:robotics",
+      "weight": 26,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:semiconductors",
+      "weight": 25,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:ai",
+      "weight": 25,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:semiconductors",
+      "weight": 25,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:semiconductors",
+      "weight": 23,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:ai",
+      "weight": 23,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "co:openai",
+      "weight": 21,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:space",
+      "weight": 20,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:startups",
+      "weight": 19,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:ai",
+      "weight": 19,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:research",
+      "weight": 19,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:ai",
+      "weight": 19,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "co:anthropic",
+      "weight": 19,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:ai",
+      "weight": 19,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "co:openai",
+      "weight": 18,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "topic:space",
+      "weight": 17,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:semiconductors",
+      "weight": 17,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:cloud",
+      "weight": 17,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "co:intel",
+      "weight": 16,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "co:github",
+      "weight": 16,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:amazon",
+      "weight": 15,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:agents",
+      "weight": 15,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:space",
+      "weight": 15,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "co:nvidia",
+      "weight": 15,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:llms",
+      "weight": 15,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "topic:robotics",
+      "weight": 15,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:llms",
+      "weight": 14,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NASA",
+      "target": "topic:space",
+      "weight": 14,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:aws",
+      "weight": 14,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:ai",
+      "weight": 14,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:ai",
+      "weight": 14,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:startups",
+      "weight": 13,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "co:google",
+      "weight": 13,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "co:google",
+      "weight": 13,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:llms",
+      "weight": 13,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:startups",
+      "weight": 13,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "co:google",
+      "weight": 13,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:space",
+      "weight": 12,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:ai",
+      "weight": 12,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:ai",
+      "weight": 12,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:startups",
+      "weight": 12,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "co:openai",
+      "weight": 12,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:ai",
+      "weight": 12,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:amazon",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "co:amazon",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:semiconductors",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:amazon",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:llms",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:amazon",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:llms",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "co:google",
+      "weight": 11,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "topic:ai",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:research",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:intel",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:security",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:startups",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:cloud",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:llms",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:research",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "topic:cloud",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:ai",
+      "weight": 10,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:ai",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:semiconductors",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:space",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:ai",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "co:deepmind",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:space",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "co:microsoft",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:research",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:ai",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "co:deepmind",
+      "weight": 9,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:github",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:cloud",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:research",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:research",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "co:arm",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:security",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:startups",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:research",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:semiconductors",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:llms",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:research",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:research",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:llms",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:research",
+      "weight": 8,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:startups",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:robotics",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:research",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:cloud",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:semiconductors",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:arm",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:agents",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:research",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:ai",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:agents",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:ai",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "co:intel",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:semiconductors",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "topic:semiconductors",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:cloud",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:ai",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:ai",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:security",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:semiconductors",
+      "weight": 7,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:research",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:ai",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:security",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:agents",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:semiconductors",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:research",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "topic:research",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "co:spacex",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:startups",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:semiconductors",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:space",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:startups",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "co:arm",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:startups",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "topic:research",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "topic:agents",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:semiconductors",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:startups",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:agents",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:research",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:llms",
+      "weight": 6,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:llms",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "topic:agents",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:startups",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:startups",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:space",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:ai",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:startups",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:intel",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:llms",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:meta",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:ai",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:robotics",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:intel",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:security",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:space",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:space",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:research",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "co:intel",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:research",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:cloud",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "topic:startups",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:research",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:startups",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:research",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:security",
+      "weight": 5,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "topic:research",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "co:hugging face",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:agents",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:security",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:semiconductors",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:security",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:space",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:research",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "topic:ai",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "topic:research",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:cloud",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:security",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "co:amazon",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NASA",
+      "target": "topic:research",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:research",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:agents",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:agents",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "co:elastic",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "co:cohere",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:ai",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "topic:agents",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:agents",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "topic:semiconductors",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:ai",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:research",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:semiconductors",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:startups",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "co:deepmind",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:semiconductors",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:llms",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:arm",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "co:canonical",
+      "weight": 4,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:startups",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "topic:llms",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:anthropic",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:ai",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "topic:llms",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:semiconductors",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:robotics",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:research",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:cloud",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:aws",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "co:intel",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:semiconductors",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "topic:cloud",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:apple",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:amazon",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "co:samsung",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "topic:ai",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:meta",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:cloud",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:research",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SaaStr",
+      "target": "topic:startups",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "topic:research",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:samsung",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:nvidia",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "topic:semiconductors",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:semiconductors",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:startups",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:meta",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:intel",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:aws",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "topic:security",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "topic:research",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "topic:ai",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "topic:semiconductors",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:semiconductors",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:ai",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:startups",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:space",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:agents",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:xai",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:meta",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:arm",
+      "weight": 3,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:security",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "co:intel",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:semiconductors",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:agents",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:meta",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:tesla",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:nvidia",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:apple",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:amazon",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:meta",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:google",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "co:openai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "topic:ai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:research",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "co:spacex",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:robotics",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "co:anthropic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:llms",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:anthropic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:agents",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:startups",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:semiconductors",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "co:aws",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "co:github",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:arm",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:github",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:llms",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:google",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:apple",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "co:cisco",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:ai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NASA",
+      "target": "topic:startups",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "co:intel",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "co:intel",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "topic:startups",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:microsoft",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:samsung",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:apple",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "co:arm",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:netflix",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "topic:semiconductors",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:llms",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "co:amd",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "co:anthropic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:startups",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:robotics",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:ai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "co:nvidia",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "co:meta",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:agents",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:security",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:elastic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:semiconductors",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:llms",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:anthropic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:openai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "co:anthropic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "topic:ai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:security",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:ai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:anthropic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:google",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:palantir",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:intel",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:arm",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "topic:llms",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "co:spacex",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "co:arm",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "person:elon musk",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "topic:research",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:agents",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:ai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "co:intel",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:semiconductors",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:robotics",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:agents",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:agents",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:security",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:robotics",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:startups",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:space",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:intel",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:cohere",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:startups",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:github",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "topic:cloud",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:openai",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:cohere",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:aws",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "co:elastic",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:meta",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "co:oracle",
+      "weight": 2,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "co:samsung",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI",
+      "target": "co:scale ai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hugging Face",
+      "target": "co:github",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:research",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:linkedin",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:uber",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:google",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "co:deepmind",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "person:mark zuckerberg",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "VentureBeat",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:cohere",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "co:amd",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "co:tesla",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:ai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "co:cohere",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:google",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:twitter",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:apple",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:mistral",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:elastic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Krebs on Security",
+      "target": "topic:ai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:elastic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "co:salesforce",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SpaceNews",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Space.com",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NASA",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NASA",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NASA",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "co:cohere",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "person:mark zuckerberg",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:tesla",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Hacker News",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:agents",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google AI",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "DeepMind",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:apple",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "co:netflix",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "The Verge",
+      "target": "person:sam altman",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Wired",
+      "target": "co:samsung",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Ars Technica",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "MIT Technology Review",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:gitlab",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Hacker News",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "topic:ai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "topic:research",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "CNET",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "co:apple",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "topic:research",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "co:google",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "ZDNet",
+      "target": "co:perplexity",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "person:mark zuckerberg",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:apple",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:amazon",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "co:uber",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Engadget",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Import AI",
+      "target": "topic:agents",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "topic:agents",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "co:twitter",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computation",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Schneier on Security",
+      "target": "topic:quantum",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "co:amazon",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:research",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "co:elastic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "TechCrunch Startups",
+      "target": "co:uber",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SaaStr",
+      "target": "co:salesforce",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SaaStr",
+      "target": "co:adobe",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SaaStr",
+      "target": "topic:ai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "SaaStr",
+      "target": "topic:agents",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "co:amazon",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "NVIDIA Blog",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:amd",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Tom's Hardware",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "co:amazon",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "co:nvidia",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "IEEE Spectrum Robotics",
+      "target": "co:hugging face",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "topic:research",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robot Report",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Robohub",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:nvidia",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "AWS Blog",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "co:github",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Azure Blog",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "co:spacex",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "person:elon musk",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "co:samsung",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Bloomberg Tech",
+      "target": "topic:research",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Sam Altman",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:ibm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "co:google",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Yann LeCun",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "person:sam altman",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "person:satya nadella",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:amd",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrew Ng",
+      "target": "co:cisco",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "co:deepmind",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Kareem Carr",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Elon Musk",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "person:demis hassabis",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Demis Hassabis",
+      "target": "topic:robotics",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "co:cisco",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "co:intel",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "co:nvidia",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Mira Murati",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:startups",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:llms",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "GitHub",
+      "target": "co:microsoft",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "co:cisco",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "topic:space",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "OpenAI @X",
+      "target": "co:arm",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:security",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Anthropic @X",
+      "target": "topic:cloud",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Google DeepMind",
+      "target": "topic:semiconductors",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:spacex",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:openai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "person:andrej karpathy",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "Andrej Karpathy",
+      "target": "co:google",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:anthropic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:spacex",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:scale ai",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv AI",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:canonical",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:cohere",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:twitter",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv ML",
+      "target": "co:elastic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "co:meta",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Robotics",
+      "target": "co:canonical",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:cohere",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:canonical",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:elastic",
+      "weight": 1,
+      "relationship": "mentions"
+    },
+    {
+      "source": "arXiv Computer Vision",
+      "target": "co:aws",
+      "weight": 1,
+      "relationship": "mentions"
+    }
+  ]
+}

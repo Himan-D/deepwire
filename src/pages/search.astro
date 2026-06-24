@@ -7,6 +7,11 @@ import { searchArticles, getAllArticles } from "../lib/data";
 const query = Astro.url.searchParams.get("q") || "";
 const results = query ? searchArticles(query) : [];
 const totalArticles = getAllArticles().length;
+const isSemantic = query && results.length > 0 && results.every((r) => {
+  const q = query.toLowerCase();
+  return !r.title.toLowerCase().includes(q) && !r.excerpt.toLowerCase().includes(q);
+});
+const resultCount = query ? totalArticles : 0;
 ---
 
 <BaseLayout title={query ? `Search: ${query}` : "Search"}>
@@ -19,6 +24,7 @@ const totalArticles = getAllArticles().length;
     <div class="mb-6 max-w-xl mx-auto">
       <p class="text-sm text-[var(--text-secondary)]">
         {results.length} results for "<strong class="text-[var(--text-primary)]">{query}</strong>"
+        {isSemantic && <span class="text-[var(--accent)] ml-2">(semantic)</span>}
       </p>
     </div>
   )}

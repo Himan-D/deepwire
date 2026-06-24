@@ -19,14 +19,36 @@ export interface Article {
   processed: boolean;
 }
 
+export interface KGNode {
+  id: string;
+  type: "company" | "person" | "technology" | "topic" | "source";
+  name: string;
+  articleCount: number;
+  lastSeen: string;
+}
+
+export interface KGEdge {
+  source: string;
+  target: string;
+  weight: number;
+  relationship: "mentions" | "develops" | "acquired_by" | "partners_with";
+}
+
+export interface KnowledgeGraph {
+  nodes: KGNode[];
+  edges: KGEdge[];
+}
+
 let cachedArticles: Article[] | null = null;
 let allArticles: Article[] | null = null;
+let cachedKG: KnowledgeGraph | null = null;
+let cachedEmbeddings: Map<number, number[]> | null = null;
 
 const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), "data");
 
 export function getAllArticles(): Article[] {
   if (allArticles) return allArticles;
-  
+
   try {
     const filePath = path.join(DATA_DIR, "articles.json");
     if (!fs.existsSync(filePath)) return [];
@@ -46,7 +68,7 @@ export function getArticles(options?: {
   source?: string;
 }): Article[] {
   const articles = getAllArticles();
-  
+
   let filtered = articles.filter((a) => {
     if (options?.category && a.category !== options.category) return false;
     if (options?.minImportance && (a.importanceScore || 0) < options.minImportance) return false;
@@ -73,26 +95,64 @@ export function getArticleBySlug(slug: number): Article | undefined {
   return getArticleById(slug);
 }
 
+const SOURCE_AUTHORITY: Record<string, number> = {
+  "arXiv AI": 90, "arXiv ML": 90, "arXiv Robotics": 85, "arXiv CV": 85,
+  "Google Research Blog": 95, "DeepMind Blog": 95, "OpenAI Blog": 95,
+  "Anthropic Blog": 95, "Meta AI Blog": 90, "Stratechery": 95,
+  "Bloomberg Tech": 90, "TechCrunch": 80, "Wired": 80,
+  "The Verge": 75, "VentureBeat": 80, "Ars Technica": 85,
+  "MIT Technology Review": 90, "Nature": 90, "Science Magazine": 90,
+  "SemiAnalysis": 90, "EE Times": 80, "Astral Codex Ten": 85,
+  "Gwern": 90, "LessWrong": 80, "Latent Space": 85,
+  "Interconnects": 85, "Search Engine Journal": 70,
+};
+
+function getSourceAuthority(source: string): number {
+  for (const [key, val] of Object.entries(SOURCE_AUTHORITY)) {
+    if (source.toLowerCase().includes(key.toLowerCase())) return val;
+  }
+  return 60;
+}
+
+function computeImportanceScore(article: Article): number {
+  const now = new Date();
+  const pubDate = new Date(article.publicationDate);
+  const ageHours = (now.getTime() - pubDate.getTime()) / (1000 * 60 * 60);
+
+  const recencyBoost = Math.max(0, 100 - ageHours * 0.5);
+  const authority = getSourceAuthority(article.source);
+  const lengthBoost = Math.min(20, (article.content?.length || 0) / 500);
+
+  const raw = recencyBoost * 0.4 + authority * 0.4 + lengthBoost * 0.2;
+  return Math.round(Math.min(100, Math.max(0, raw)));
+}
+
 export function getTrendingArticles(limit: number = 4): Article[] {
   const articles = getAllArticles();
-  return articles
-    .sort((a, b) => (b.importanceScore || 0) - (a.importanceScore || 0))
-    .slice(0, limit);
+  const now = new Date();
+
+  const scored = articles.map((a) => {
+    const ageHours = (now.getTime() - new Date(a.publicationDate).getTime()) / (1000 * 60 * 60);
+    const recencyFactor = Math.max(0, 1 - ageHours / 720);
+    const crossSource = (a.companies?.length || 0) + (a.technologies?.length || 0);
+    const finalScore = (a.importanceScore || 0) * 0.3 + recencyFactor * 40 + crossSource * 3;
+    return { article: a, score: finalScore };
+  });
+
+  return scored.sort((a, b) => b.score - a.score).slice(0, limit).map((r) => r.article);
 }
 
 export function getTopStories(limit: number = 15): Article[] {
   const articles = getAllArticles();
   const now = new Date();
   const threeDaysAgo = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000);
-  
+
   return articles
     .filter((a) => new Date(a.publicationDate) > threeDaysAgo)
-    .sort(
-      (a, b) =>
-        (b.importanceScore || 0) - (a.importanceScore || 0) ||
-        new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime()
-    )
-    .slice(0, limit);
+    .map((a) => ({ article: a, score: computeImportanceScore(a) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((r) => r.article);
 }
 
 export function getArticlesByCategory(category: string, limit: number = 20): Article[] {
@@ -107,12 +167,14 @@ export function getTrendTopics(): Array<{
 }> {
   const articles = getAllArticles();
   const now = new Date();
-  const tagCounts: Record<string, { count: number; category: string }> = {};
+  const tagCounts: Record<string, { count: number; recent: number; category: string }> = {};
 
   for (const article of articles) {
     for (const tag of article.tags) {
-      if (!tagCounts[tag]) tagCounts[tag] = { count: 0, category: article.category };
+      if (!tagCounts[tag]) tagCounts[tag] = { count: 0, recent: 0, category: article.category };
       tagCounts[tag].count++;
+      const ageDays = (now.getTime() - new Date(article.publicationDate).getTime()) / (1000 * 60 * 60 * 24);
+      if (ageDays <= 3) tagCounts[tag].recent++;
     }
   }
 
@@ -120,41 +182,95 @@ export function getTrendTopics(): Array<{
     .map(([topic, data]) => ({
       topic,
       mentionCount: data.count,
-      growthRate: Math.min(100, Math.round(Math.random() * 80 + 10)),
+      growthRate: data.count > 0 ? Math.round((data.recent / data.count) * 100) : 0,
       category: data.category,
     }))
-    .sort((a, b) => b.mentionCount - a.mentionCount)
+    .sort((a, b) => b.growthRate - a.growthRate)
     .slice(0, 15);
+}
+
+function tokenize(text: string): string[] {
+  return text.toLowerCase().replace(/[^a-z0-9\s]/g, "").split(/\s+/).filter(Boolean);
+}
+
+function computeTFIDF(docs: string[][]): Map<string, number>[] {
+  const docCount = docs.length;
+  const df = new Map<string, number>();
+
+  for (const tokens of docs) {
+    const seen = new Set(tokens);
+    for (const t of seen) df.set(t, (df.get(t) || 0) + 1);
+  }
+
+  return docs.map((tokens) => {
+    const tfidf = new Map<string, number>();
+    const maxFreq = Math.max(1, ...tokens.map((t) => tokens.filter((x) => x === t).length));
+    for (const t of tokens) {
+      const tf = tokens.filter((x) => x === t).length / maxFreq;
+      const idf = Math.log((docCount + 1) / ((df.get(t) || 0) + 1)) + 1;
+      tfidf.set(t, tf * idf);
+    }
+    return tfidf;
+  });
+}
+
+function cosineSimilarity(a: Map<string, number>, b: Map<string, number>): number {
+  let dot = 0, normA = 0, normB = 0;
+  for (const [k, v] of a) {
+    normA += v * v;
+    const bv = b.get(k) || 0;
+    dot += v * bv;
+  }
+  for (const v of b.values()) normB += v * v;
+  const denom = Math.sqrt(normA) * Math.sqrt(normB);
+  return denom === 0 ? 0 : dot / denom;
 }
 
 export function searchArticles(query: string): Article[] {
   const q = query.toLowerCase();
   const articles = getAllArticles();
-  
-  return articles
-    .filter(
-      (a) =>
-        a.title.toLowerCase().includes(q) ||
-        a.excerpt.toLowerCase().includes(q) ||
-        a.source.toLowerCase().includes(q) ||
-        a.author.toLowerCase().includes(q)
-    )
-    .sort(
-      (a, b) =>
-        (b.importanceScore || 0) - (a.importanceScore || 0) ||
-        new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime()
-    )
-    .slice(0, 50);
+
+  const filtered = articles.filter(
+    (a) =>
+      a.title.toLowerCase().includes(q) ||
+      a.excerpt.toLowerCase().includes(q) ||
+      a.source.toLowerCase().includes(q) ||
+      a.author.toLowerCase().includes(q)
+  );
+
+  if (filtered.length > 0) {
+    return filtered
+      .sort(
+        (a, b) =>
+          (b.importanceScore || 0) - (a.importanceScore || 0) ||
+          new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime()
+      )
+      .slice(0, 50);
+  }
+
+  const allTexts = articles.map((a) => `${a.title} ${a.excerpt}`);
+  const allTokens = allTexts.map(tokenize);
+  const queryTokens = tokenize(query);
+  const vectors = computeTFIDF(allTokens);
+  const queryVec = computeTFIDF([queryTokens])[0];
+
+  const scored = articles
+    .map((a, i) => ({ article: a, score: cosineSimilarity(vectors[i], queryVec) }))
+    .filter((r) => r.score > 0.05)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 20);
+
+  return scored.map((r) => r.article);
 }
 
 export function getSources(): Array<{ name: string; articleCount: number }> {
   const articles = getAllArticles();
   const sourceMap: Record<string, number> = {};
-  
+
   for (const article of articles) {
     sourceMap[article.source] = (sourceMap[article.source] || 0) + 1;
   }
-  
+
   return Object.entries(sourceMap)
     .map(([name, articleCount]) => ({ name, articleCount }))
     .sort((a, b) => b.articleCount - a.articleCount);
@@ -171,7 +287,7 @@ export function getRelatedArticles(id: number, limit: number = 5): Article[] {
       const tagOverlap = a.tags.filter((t) => article.tags.includes(t)).length;
       const sameSource = a.source === article.source ? 1 : 0;
       const sameCategory = a.category === article.category ? 2 : 0;
-      return { article, score: tagOverlap + sameSource + sameCategory };
+      return { article: a, score: tagOverlap + sameSource + sameCategory };
     })
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
@@ -188,4 +304,76 @@ export function slugify(name: string): string {
 export function getSourceBySlug(slug: string): string | undefined {
   const sources = getSources();
   return sources.find((s) => slugify(s.name) === slug)?.name;
+}
+
+export function loadKnowledgeGraph(): KnowledgeGraph {
+  if (cachedKG) return cachedKG;
+  try {
+    const filePath = path.join(DATA_DIR, "knowledge-graph.json");
+    if (!fs.existsSync(filePath)) {
+      cachedKG = { nodes: [], edges: [] };
+      return cachedKG;
+    }
+    const data = fs.readFileSync(filePath, "utf-8");
+    cachedKG = JSON.parse(data);
+    return cachedKG;
+  } catch {
+    cachedKG = { nodes: [], edges: [] };
+    return cachedKG;
+  }
+}
+
+export function getKnowledgeGraph(): KnowledgeGraph {
+  return loadKnowledgeGraph();
+}
+
+export function getTopEntities(type?: KGNode["type"], limit: number = 10): KGNode[] {
+  const kg = loadKnowledgeGraph();
+  let nodes = kg.nodes;
+  if (type) nodes = nodes.filter((n) => n.type === type);
+  return nodes.sort((a, b) => b.articleCount - a.articleCount).slice(0, limit);
+}
+
+export function getNodeConnections(nodeId: string): { node: KGNode; edges: KGEdge[] } | null {
+  const kg = loadKnowledgeGraph();
+  const node = kg.nodes.find((n) => n.id === nodeId);
+  if (!node) return null;
+  const edges = kg.edges.filter((e) => e.source === nodeId || e.target === nodeId);
+  return { node, edges };
+}
+
+export function getRelatedEntities(nodeId: string, limit: number = 5): Array<{ node: KGNode; weight: number }> {
+  const kg = loadKnowledgeGraph();
+  const connections = getNodeConnections(nodeId);
+  if (!connections) return [];
+
+  const related = new Map<string, { node: KGNode; weight: number }>();
+  for (const edge of connections.edges) {
+    const relatedId = edge.source === nodeId ? edge.target : edge.source;
+    const relatedNode = kg.nodes.find((n) => n.id === relatedId);
+    if (relatedNode && relatedNode.id !== nodeId) {
+      const existing = related.get(relatedId);
+      if (existing) {
+        existing.weight += edge.weight;
+      } else {
+        related.set(relatedId, { node: relatedNode, weight: edge.weight });
+      }
+    }
+  }
+
+  return Array.from(related.values())
+    .sort((a, b) => b.weight - a.weight)
+    .slice(0, limit);
+}
+
+export function getTodayArticles(): Article[] {
+  const articles = getAllArticles();
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfTodayMs = startOfToday.getTime();
+
+  return articles
+    .filter((a) => new Date(a.publicationDate).getTime() >= startOfTodayMs)
+    .sort((a, b) => (b.importanceScore || 0) - (a.importanceScore || 0))
+    .slice(0, 10);
 }
