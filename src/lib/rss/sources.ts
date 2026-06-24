@@ -27,6 +27,18 @@ export const defaultSources: RSSSource[] = [
 
   // AI & ML News
   { name: "Import AI", feedUrl: "https://jack-clark.net/feed/", url: "https://jack-clark.net", category: "ai", authority: 7 },
+  { name: "Unite AI", feedUrl: "https://www.unite.ai/feed/", url: "https://www.unite.ai", category: "ai", authority: 5 },
+  { name: "MarkTechPost", feedUrl: "https://www.marktechpost.com/feed/", url: "https://www.marktechpost.com", category: "ai", authority: 5 },
+  { name: "Last Week in AI", feedUrl: "https://lastweekin.ai/feed", url: "https://lastweekin.ai", category: "ai", authority: 6 },
+  { name: "AI News", feedUrl: "https://www.artificialintelligence-news.com/rss", url: "https://www.artificialintelligence-news.com", category: "ai", authority: 5 },
+  { name: "Analytics Vidhya", feedUrl: "https://www.analyticsvidhya.com/blog/feed", url: "https://www.analyticsvidhya.com", category: "ai", authority: 5 },
+  { name: "Medium AI", feedUrl: "https://medium.com/feed/tag/artificial-intelligence", url: "https://medium.com/tag/artificial-intelligence", category: "ai", authority: 5 },
+  { name: "Medium Deep Learning", feedUrl: "https://medium.com/feed/tag/deep-learning", url: "https://medium.com/tag/deep-learning", category: "ai", authority: 5 },
+  { name: "VentureBeat AI", feedUrl: "https://venturebeat.com/category/ai/feed/", url: "https://venturebeat.com/category/ai/", category: "ai", authority: 7 },
+  { name: "Ars Technica AI", feedUrl: "https://arstechnica.com/tag/ai/feed/", url: "https://arstechnica.com/tag/ai/", category: "ai", authority: 7 },
+  { name: "Towards Data Science", feedUrl: "https://towardsdatascience.com/feed", url: "https://towardsdatascience.com", category: "ai", authority: 5 },
+  { name: "Latent Space", feedUrl: "https://www.latent.space/feed", url: "https://www.latent.space", category: "ai", authority: 6 },
+  { name: "Interconnects", feedUrl: "https://www.interconnects.ai/feed", url: "https://www.interconnects.ai", category: "ai", authority: 6 },
 
   // Research
   { name: "arXiv AI", feedUrl: "https://rss.arxiv.org/rss/cs.AI", url: "https://arxiv.org/list/cs.AI/recent", category: "research", authority: 9 },
@@ -34,13 +46,17 @@ export const defaultSources: RSSSource[] = [
   { name: "arXiv Robotics", feedUrl: "https://rss.arxiv.org/rss/cs.RO", url: "https://arxiv.org/list/cs.RO/recent", category: "research", authority: 8 },
   { name: "arXiv Computer Vision", feedUrl: "https://rss.arxiv.org/rss/cs.CV", url: "https://arxiv.org/list/cs.CV/recent", category: "research", authority: 8 },
   { name: "arXiv Computation", feedUrl: "https://rss.arxiv.org/rss/cs.CL", url: "https://arxiv.org/list/cs.CL/recent", category: "research", authority: 8 },
+  { name: "arXiv Stats ML", feedUrl: "https://rss.arxiv.org/rss/stat.ML", url: "https://arxiv.org/list/stat.ML/recent", category: "research", authority: 8 },
   { name: "Nature AI", feedUrl: "https://www.nature.com/subjects/artificial-intelligence.rss", url: "https://www.nature.com/subjects/artificial-intelligence", category: "research", authority: 10 },
+  { name: "Google Research", feedUrl: "https://blog.research.google/feeds/posts/default", url: "https://blog.research.google", category: "research", authority: 9 },
+  { name: "Gwern", feedUrl: "https://gwern.net/index.xml", url: "https://gwern.net", category: "research", authority: 8 },
+  { name: "LessWrong", feedUrl: "https://www.lesswrong.com/feed", url: "https://www.lesswrong.com", category: "research", authority: 7 },
 
   // Cybersecurity
   { name: "Krebs on Security", feedUrl: "https://krebsonsecurity.com/feed/", url: "https://krebsonsecurity.com", category: "security", authority: 9 },
   { name: "The Hacker News", feedUrl: "https://thehackernews.com/feeds/posts/default", url: "https://thehackernews.com", category: "security", authority: 7 },
-
   { name: "Schneier on Security", feedUrl: "https://www.schneier.com/feed/atom/", url: "https://www.schneier.com", category: "security", authority: 8 },
+  { name: "Threatpost", feedUrl: "https://threatpost.com/feed", url: "https://threatpost.com", category: "security", authority: 6 },
 
   // Startups
 
@@ -57,15 +73,41 @@ export const defaultSources: RSSSource[] = [
   // Semiconductors
   { name: "NVIDIA Blog", feedUrl: "https://blogs.nvidia.com/feed/", url: "https://blogs.nvidia.com", category: "semiconductors", authority: 9 },
   { name: "Tom's Hardware", feedUrl: "https://www.tomshardware.com/feeds/all", url: "https://www.tomshardware.com", category: "semiconductors", authority: 6 },
+  { name: "SemiAnalysis", feedUrl: "https://www.semianalysis.com/feed", url: "https://www.semianalysis.com", category: "semiconductors", authority: 8 },
+  { name: "EE Times", feedUrl: "https://www.eetimes.com/feed", url: "https://www.eetimes.com", category: "semiconductors", authority: 7 },
 
   // Robotics
   { name: "IEEE Spectrum Robotics", feedUrl: "https://spectrum.ieee.org/feeds/robotics.rss", url: "https://spectrum.ieee.org/robotics", category: "robotics", authority: 8 },
   { name: "Robot Report", feedUrl: "https://www.therobotreport.com/feed/", url: "https://www.therobotreport.com", category: "robotics", authority: 6 },
   { name: "Robohub", feedUrl: "https://robohub.org/feed/", url: "https://robohub.org", category: "robotics", authority: 6 },
+  { name: "Robotics 24/7", feedUrl: "https://www.robotics247.com/feed", url: "https://www.robotics247.com", category: "robotics", authority: 5 },
 
   // Cloud / Infrastructure
   { name: "AWS Blog", feedUrl: "https://aws.amazon.com/blogs/aws/feed/", url: "https://aws.amazon.com/blogs/aws/", category: "cloud", authority: 8 },
   { name: "Azure Blog", feedUrl: "https://azure.microsoft.com/blog/feed/", url: "https://azure.microsoft.com/blog", category: "cloud", authority: 7 },
+  { name: "Google Cloud", feedUrl: "https://cloud.google.com/blog/feeds/ai-machine-learning", url: "https://cloud.google.com/blog/ai-machine-learning", category: "cloud", authority: 7 },
+  { name: "Heroku Blog", feedUrl: "https://blog.heroku.com/feed", url: "https://blog.heroku.com", category: "cloud", authority: 5 },
+  { name: "MongoDB Blog", feedUrl: "https://www.mongodb.com/blog/rss", url: "https://www.mongodb.com/blog", category: "cloud", authority: 6 },
+
+  // Developer / Engineering Blogs
+  { name: "GitHub Blog", feedUrl: "https://github.blog/feed", url: "https://github.blog", category: "cloud", authority: 8 },
+  { name: "Google Developers", feedUrl: "https://developers.googleblog.com/feeds/posts/default", url: "https://developers.googleblog.com", category: "technology", authority: 7 },
+  { name: "Stack Overflow Blog", feedUrl: "https://stackoverflow.blog/feed", url: "https://stackoverflow.blog", category: "technology", authority: 7 },
+  { name: "Netflix Tech", feedUrl: "https://netflixtechblog.com/feed", url: "https://netflixtechblog.com", category: "technology", authority: 7 },
+  { name: "Meta Engineering", feedUrl: "https://engineering.fb.com/feed", url: "https://engineering.fb.com", category: "technology", authority: 7 },
+  { name: "Slack Engineering", feedUrl: "https://slack.engineering/feed", url: "https://slack.engineering", category: "technology", authority: 6 },
+  { name: "Elastic Blog", feedUrl: "https://www.elastic.co/blog/feed", url: "https://www.elastic.co/blog", category: "cloud", authority: 5 },
+
+  // Technology News
+  { name: "The Register", feedUrl: "https://www.theregister.com/headlines.rss", url: "https://www.theregister.com", category: "technology", authority: 7 },
+  { name: "SiliconAngle", feedUrl: "https://siliconangle.com/feed", url: "https://siliconangle.com", category: "technology", authority: 6 },
+  { name: "Amazon AI", feedUrl: "https://www.aboutamazon.com/news/tag/artificial-intelligence/rss", url: "https://www.aboutamazon.com/news/tag/artificial-intelligence", category: "ai", authority: 7 },
+  { name: "O'Reilly Radar", feedUrl: "https://feeds.feedburner.com/oreilly/radar/atom", url: "https://www.oreilly.com/radar", category: "technology", authority: 7 },
+  { name: "Search Engine Journal", feedUrl: "https://www.searchenginejournal.com/feed", url: "https://www.searchenginejournal.com", category: "technology", authority: 5 },
+
+  // Tech Strategy / Analysis
+  { name: "Stratechery", feedUrl: "https://stratechery.com/feed", url: "https://stratechery.com", category: "technology", authority: 9 },
+  { name: "Astral Codex Ten", feedUrl: "https://www.astralcodexten.com/feed", url: "https://www.astralcodexten.com", category: "research", authority: 7 },
 
   // Business / Finance
   { name: "Bloomberg Tech", feedUrl: "https://feeds.bloomberg.com/markets/news.rss", url: "https://www.bloomberg.com/technology", category: "technology", authority: 8 },
