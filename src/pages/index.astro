@@ -5,7 +5,7 @@ import NewsCard from "../components/news/NewsCard.astro";
 import TrendingTopics from "../components/news/TrendingTopics.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { categories } from "../config";
-import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics, getTodayArticles, getTopEntities, getAllArticles } from "../lib/data";
+import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics, getTodayArticles, getTopEntities, getAllArticles, getKnowledgeGraph } from "../lib/data";
 
 const topStories = getTopStories(15);
 const trending = getTrendingArticles(4);
@@ -147,6 +147,17 @@ const topPeople = getTopEntities("person", 5);
 
     <aside class="max-lg:hidden">
       <div class="sticky top-24 space-y-6">
+        <a
+          href="/knowledge-graph"
+          class="block p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-colors group"
+        >
+          <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Knowledge Graph</h3>
+          <p class="text-[10px] text-[var(--text-tertiary)] leading-relaxed">
+            Explore {getKnowledgeGraph().nodes.length} entities and {getKnowledgeGraph().edges.length} relationships across {getAllArticles().length} articles
+          </p>
+          <span class="text-[10px] text-[var(--accent)] mt-2 inline-block group-hover:underline">Explore &rarr;</span>
+        </a>
+
         <TrendingTopics trends={trendTopics.slice(0, 8)} period="trending" />
 
         {topCompanies.length > 0 && (

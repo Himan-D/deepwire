@@ -1,9 +1,30 @@
 import type { APIRoute } from "astro";
-import { getKnowledgeGraph, getTopEntities, getNodeConnections } from "../../lib/data";
+import {
+  getKnowledgeGraph, getTopEntities, getNodeConnections,
+  getEntityRecommendations, getGraphNeighborhood,
+  searchGraphEntities, getGraphStats, getGraphTimeline
+} from "../../lib/data";
 
 export const GET: APIRoute = ({ url }) => {
   const kg = getKnowledgeGraph();
   const entity = url.searchParams.get("entity");
+  const search = url.searchParams.get("search");
+  const recommend = url.searchParams.get("recommend");
+  const neighborhood = url.searchParams.get("neighborhood");
+  const timeline = url.searchParams.has("timeline");
+  const stats = url.searchParams.has("stats");
+
+  if (stats) {
+    return new Response(JSON.stringify(getGraphStats()), {
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "max-age=3600" },
+    });
+  }
+
+  if (timeline) {
+    return new Response(JSON.stringify(getGraphTimeline()), {
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "max-age=3600" },
+    });
+  }
 
   if (entity) {
     const connections = getNodeConnections(entity);
@@ -13,25 +34,43 @@ export const GET: APIRoute = ({ url }) => {
         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
       });
     }
-    return new Response(JSON.stringify(connections), {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Cache-Control": "max-age=3600",
-      },
+    return new Response(
+      JSON.stringify({ ...connections, recommendations: getEntityRecommendations(entity, 5) }),
+      {
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "max-age=3600" },
+      }
+    );
+  }
+
+  if (search) {
+    return new Response(JSON.stringify({ results: searchGraphEntities(search) }), {
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "max-age=3600" },
     });
   }
 
+  if (recommend) {
+    return new Response(JSON.stringify({ recommendations: getEntityRecommendations(recommend, 10) }), {
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "max-age=3600" },
+    });
+  }
+
+  if (neighborhood) {
+    const depth = parseInt(url.searchParams.get("depth") || "2");
+    return new Response(JSON.stringify(getGraphNeighborhood(neighborhood, depth)), {
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Cache-Control": "max-age=3600" },
+    });
+  }
+
+  const statsObj = getGraphStats();
   return new Response(
     JSON.stringify({
-      totalNodes: kg.nodes.length,
-      totalEdges: kg.edges.length,
-      nodes: kg.nodes.slice(0, 50),
-      edges: kg.edges.slice(0, 100),
+      stats: statsObj,
+      nodes: kg.nodes.slice(0, 100),
+      edges: kg.edges.slice(0, 200),
       topCompanies: getTopEntities("company", 15),
       topPeople: getTopEntities("person", 15),
-      topTopics: getTopEntities("topic", 15),
       topTechnologies: getTopEntities("technology", 15),
+      topTopics: getTopEntities("topic", 15),
       topSources: getTopEntities("source", 15),
     }),
     {

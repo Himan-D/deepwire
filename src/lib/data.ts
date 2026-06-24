@@ -19,11 +19,15 @@ export interface Article {
   processed: boolean;
 }
 
+export type NodeType = "company" | "person" | "technology" | "topic" | "source" | "category";
+export type EdgeType = "mentions" | "develops" | "acquired_by" | "partners_with" | "competes_with" | "co_occurs" | "categorizes" | "covers" | "employs";
+
 export interface KGNode {
   id: string;
-  type: "company" | "person" | "technology" | "topic" | "source";
+  type: NodeType;
   name: string;
   articleCount: number;
+  importance: number;
   lastSeen: string;
 }
 
@@ -31,10 +35,30 @@ export interface KGEdge {
   source: string;
   target: string;
   weight: number;
-  relationship: "mentions" | "develops" | "acquired_by" | "partners_with";
+  relationship: EdgeType;
+  directed: boolean;
+  firstSeen: string;
+  lastSeen: string;
+}
+
+export interface KGStats {
+  totalArticles: number;
+  totalNodes: number;
+  totalEdges: number;
+  filteredNodes: number;
+  filteredEdges: number;
+  nodeTypeBreakdown: Record<string, number>;
+  relationshipBreakdown: Record<string, number>;
+  topCompanies: string[];
+  topPeople: string[];
+  topTechnologies: string[];
+  topTopics: string[];
+  topSources: string[];
+  generatedAt: string;
 }
 
 export interface KnowledgeGraph {
+  stats?: KGStats;
   nodes: KGNode[];
   edges: KGEdge[];
 }
@@ -364,6 +388,116 @@ export function getRelatedEntities(nodeId: string, limit: number = 5): Array<{ n
   return Array.from(related.values())
     .sort((a, b) => b.weight - a.weight)
     .slice(0, limit);
+}
+
+export function getEntityRecommendations(entityId: string, limit: number = 6): Array<{ node: KGNode; path: string; score: number }> {
+  const kg = loadKnowledgeGraph();
+  const connected = getRelatedEntities(entityId, 20);
+  const secondDegree = new Map<string, { node: KGNode; path: string; score: number }>();
+
+  for (const { node: hop1 } of connected) {
+    const hop2s = getRelatedEntities(hop1.id, 10);
+    for (const { node: hop2 } of hop2s) {
+      if (hop2.id === entityId) continue;
+      if (connected.some((c) => c.node.id === hop2.id)) continue;
+      const score = (hop1.importance || hop1.articleCount) * 0.3 + (hop2.importance || hop2.articleCount) * 0.7;
+      const key = hop2.id;
+      if (!secondDegree.has(key) || score > secondDegree.get(key)!.score) {
+        secondDegree.set(key, { node: hop2, path: `${hop1.name} → ${hop2.name}`, score });
+      }
+    }
+  }
+
+  return Array.from(secondDegree.values())
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+}
+
+export function searchGraphEntities(query: string): Array<{ node: KGNode; score: number }> {
+  const kg = loadKnowledgeGraph();
+  const q = query.toLowerCase();
+  const scored = kg.nodes
+    .filter((n) => n.name.toLowerCase().includes(q))
+    .map((n) => ({ node: n, score: n.importance || n.articleCount }));
+  return scored.sort((a, b) => b.score - a.score).slice(0, 20);
+}
+
+export function getGraphNeighborhood(entityId: string, depth: number = 2): KnowledgeGraph {
+  const kg = loadKnowledgeGraph();
+  const visited = new Set<string>();
+  const nodeSet = new Map<string, KGNode>();
+  const edgeSet = new Map<string, KGEdge>();
+
+  function traverse(currentId: string, remainingDepth: number) {
+    if (remainingDepth < 0 || visited.has(currentId)) return;
+    visited.add(currentId);
+
+    const node = kg.nodes.find((n) => n.id === currentId);
+    if (!node) return;
+    nodeSet.set(currentId, node);
+
+    const incident = kg.edges.filter((e) => e.source === currentId || e.target === currentId);
+    for (const edge of incident) {
+      const key = `${edge.source}::${edge.target}::${edge.relationship}`;
+      edgeSet.set(key, edge);
+      const neighborId = edge.source === currentId ? edge.target : edge.source;
+      traverse(neighborId, remainingDepth - 1);
+    }
+  }
+
+  traverse(entityId, depth);
+  return { nodes: [...nodeSet.values()], edges: [...edgeSet.values()] };
+}
+
+export function getGraphStats(): KGStats {
+  const kg = loadKnowledgeGraph();
+  return kg.stats || {
+    totalArticles: 0,
+    totalNodes: kg.nodes.length,
+    totalEdges: kg.edges.length,
+    filteredNodes: kg.nodes.length,
+    filteredEdges: kg.edges.length,
+    nodeTypeBreakdown: {},
+    relationshipBreakdown: {},
+    topCompanies: [],
+    topPeople: [],
+    topTechnologies: [],
+    topTopics: [],
+    topSources: [],
+    generatedAt: new Date().toISOString(),
+  };
+}
+
+export function getGraphTimeline(): Array<{ date: string; nodeCount: number; edgeCount: number; topEntities: string[] }> {
+  const kg = loadKnowledgeGraph();
+  const months = new Map<string, { nodes: Set<string>; edges: Set<string>; entities: Map<string, number> }>();
+
+  for (const node of kg.nodes) {
+    const d = node.lastSeen.slice(0, 7);
+    if (!months.has(d)) months.set(d, { nodes: new Set(), edges: new Set(), entities: new Map() });
+    months.get(d)!.nodes.add(node.id);
+  }
+
+  for (const edge of kg.edges) {
+    const d = edge.lastSeen.slice(0, 7);
+    if (months.has(d)) months.get(d)!.edges.add(`${edge.source}::${edge.target}`);
+    for (const [id, eid] of [edge.source, edge.target].entries()) {
+      const node = kg.nodes.find((n) => n.id === eid);
+      if (node && months.has(d)) {
+        const m = months.get(d)!;
+        m.entities.set(node.name, (m.entities.get(node.name) || 0) + 1);
+      }
+    }
+  }
+
+  return Array.from(months.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, data]) => ({
+      date,
+      nodeCount: data.nodes.size,
+      edgeCount: data.edges.size,
+      topEntities: [...data.entities.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name]) => name),
+    }));
 }
 
 export function getTodayArticles(): Article[] {

@@ -1,0 +1,346 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getKnowledgeGraph, getGraphStats, getTopEntities } from "../lib/data";
+
+const kg = getKnowledgeGraph();
+const stats = getGraphStats();
+const companies = getTopEntities("company", 20);
+const people = getTopEntities("person", 15);
+const technologies = getTopEntities("technology", 15);
+const topics = getTopEntities("topic", 15);
+const sources = getTopEntities("source", 15);
+---
+
+<BaseLayout title="Knowledge Graph">
+  <div class="mb-8">
+    <h1 class="text-sm font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2">Knowledge Graph</h1>
+    <p class="text-sm text-[var(--text-secondary)]">
+      {stats.totalNodes} entities · {stats.totalEdges} relationships · {stats.totalArticles} articles
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+    <div>
+      <div id="graph-container" class="w-full aspect-[16/10] rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)] relative overflow-hidden">
+        <canvas id="graph-canvas" class="w-full h-full cursor-grab active:cursor-grabbing" />
+        <div id="graph-loading" class="absolute inset-0 flex items-center justify-center text-sm text-[var(--text-tertiary)]">
+          Loading graph…
+        </div>
+        <div id="graph-tooltip" class="absolute hidden bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs shadow-lg pointer-events-none" />
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-4 mb-2">
+        <button data-filter="all" class="graph-filter active text-xs px-3 py-1.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent)] transition-colors">All</button>
+        <button data-filter="company" class="graph-filter text-xs px-3 py-1.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent)] transition-colors">Companies</button>
+        <button data-filter="person" class="graph-filter text-xs px-3 py-1.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent)] transition-colors">People</button>
+        <button data-filter="technology" class="graph-filter text-xs px-3 py-1.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent)] transition-colors">Technologies</button>
+        <button data-filter="source" class="graph-filter text-xs px-3 py-1.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent)] transition-colors">Sources</button>
+        <button data-filter="topic" class="graph-filter text-xs px-3 py-1.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent)] transition-colors">Topics</button>
+      </div>
+
+      <div class="flex gap-4 text-xs text-[var(--text-tertiary)]">
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#E85D2A" />Company</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#3B82F6" />Person</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#10B981" />Technology</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#8B5CF6" />Topic</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#F59E0B" />Source</span>
+      </div>
+    </div>
+
+    <aside class="max-lg:hidden space-y-4">
+      <div class="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)]">
+        <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-3">Graph Stats</h3>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between"><span>Nodes</span><span class="font-medium">{stats.totalNodes}</span></div>
+          <div class="flex justify-between"><span>Edges</span><span class="font-medium">{stats.totalEdges}</span></div>
+          <div class="flex justify-between"><span>Articles</span><span class="font-medium">{stats.totalArticles}</span></div>
+          <div class="flex justify-between"><span>Generated</span><span class="font-medium">{stats.generatedAt?.slice(0, 10)}</span></div>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)]">
+        <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-3">Top Companies</h3>
+        <div class="space-y-1.5">
+          {companies.map((e) => (
+            <a href={`/company/${e.name.toLowerCase().replace(/\s+/g, "-")}`} class="flex items-center justify-between text-xs py-1 hover:text-[var(--accent)] transition-colors">
+              <span class="truncate">{e.name}</span>
+              <span class="text-[var(--text-tertiary)] ml-2">{e.articleCount}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)]">
+        <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-3">Top People</h3>
+        <div class="space-y-1.5">
+          {people.map((e) => (
+            <div class="flex items-center justify-between text-xs py-1">
+              <span class="truncate capitalize">{e.name}</span>
+              <span class="text-[var(--text-tertiary)] ml-2">{e.articleCount}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)]">
+        <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-3">Top Technologies</h3>
+        <div class="space-y-1.5">
+          {technologies.slice(0, 10).map((e) => (
+            <div class="flex items-center justify-between text-xs py-1">
+              <span class="truncate">{e.name}</span>
+              <span class="text-[var(--text-tertiary)] ml-2">{e.articleCount}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+(() => {
+  const container = document.getElementById('graph-container');
+  const canvas = document.getElementById('graph-canvas');
+  const tooltip = document.getElementById('graph-tooltip');
+  const loading = document.getElementById('graph-loading');
+  if (!canvas || !container) return;
+
+  const ctx = canvas.getContext('2d');
+  let nodes = [];
+  let edges = [];
+  let activeFilter = 'all';
+  let hoveredNode = null;
+  let dragNode = null;
+  let dragOffset = { x: 0, y: 0 };
+  let viewTransform = { x: 0, y: 0, scale: 1 };
+  let isPanning = false;
+  let panStart = { x: 0, y: 0 };
+
+  const NODE_COLORS = { company: '#E85D2A', person: '#3B82F6', technology: '#10B981', topic: '#8B5CF6', source: '#F59E0B', category: '#6B7280' };
+
+  function resize() {
+    const rect = container.getBoundingClientRect();
+    canvas.width = rect.width * devicePixelRatio;
+    canvas.height = rect.height * devicePixelRatio;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+  }
+
+  function fetchGraph(filter) {
+    loading.style.display = 'flex';
+    const url = filter && filter !== 'all' ? `/api/knowledge-graph?filter=${filter}` : '/api/knowledge-graph';
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        nodes = (data.nodes || []).map(n => ({
+          ...n,
+          x: Math.random() * 800 - 400,
+          y: Math.random() * 600 - 300,
+          vx: 0, vy: 0,
+          radius: Math.max(4, Math.min(20, Math.sqrt(n.articleCount || 1) * 3)),
+        }));
+        const nodeIds = new Set(nodes.map(n => n.id));
+        edges = (data.edges || []).filter(e => nodeIds.has(e.source) && nodeIds.has(e.target));
+        loading.style.display = 'none';
+        simulate();
+      });
+  }
+
+  function simulate() {
+    const width = canvas.width / devicePixelRatio;
+    const height = canvas.height / devicePixelRatio;
+    const centerX = width / 2;
+    const centerY = height / 2;
+
+    for (let iter = 0; iter < 100; iter++) {
+      const alpha = Math.max(0.001, 1 - iter / 100);
+
+      for (const n of nodes) {
+        let fx = 0, fy = 0;
+        fx += (centerX - n.x) * 0.001 * alpha;
+        fy += (centerY - n.y) * 0.001 * alpha;
+        for (const other of nodes) {
+          if (n.id === other.id) continue;
+          const dx = n.x - other.x;
+          const dy = n.y - other.y;
+          const dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+          const force = 500 / (dist * dist);
+          fx += (dx / dist) * force * alpha;
+          fy += (dy / dist) * force * alpha;
+        }
+        n.vx += fx;
+        n.vy += fy;
+      }
+
+      for (const e of edges) {
+        const s = nodes.find(n => n.id === e.source);
+        const t = nodes.find(n => n.id === e.target);
+        if (!s || !t) continue;
+        const dx = t.x - s.x;
+        const dy = t.y - s.y;
+        const dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+        const force = (dist - 150) * 0.01 * alpha;
+        const fx = (dx / dist) * force;
+        const fy = (dy / dist) * force;
+        s.vx += fx; s.vy += fy;
+        t.vx -= fx; t.vy -= fy;
+      }
+
+      for (const n of nodes) {
+        n.vx *= 0.5;
+        n.vy *= 0.5;
+        n.x += n.vx;
+        n.y += n.vy;
+      }
+    }
+    render();
+  }
+
+  function render() {
+    const width = canvas.width / devicePixelRatio;
+    const height = canvas.height / devicePixelRatio;
+    ctx.clearRect(0, 0, width, height);
+
+    ctx.save();
+    ctx.translate(viewTransform.x, viewTransform.y);
+    ctx.scale(viewTransform.scale, viewTransform.scale);
+
+    for (const e of edges) {
+      const s = nodes.find(n => n.id === e.source);
+      const t = nodes.find(n => n.id === e.target);
+      if (!s || !t) continue;
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.lineTo(t.x, t.y);
+      ctx.strokeStyle = `rgba(255,255,255,${Math.min(0.3, 0.05 + e.weight * 0.01)})`;
+      ctx.lineWidth = Math.min(3, 0.5 + e.weight * 0.05);
+      ctx.stroke();
+    }
+
+    for (const n of nodes) {
+      const isHovered = hoveredNode === n.id;
+      const color = NODE_COLORS[n.type] || '#6B7280';
+      const r = isHovered ? n.radius * 1.3 : n.radius;
+
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.8;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      if (isHovered) {
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      if (n.radius > 8) {
+        ctx.fillStyle = '#fff';
+        ctx.font = `${Math.max(8, n.radius * 0.6)}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(n.name.length > 12 ? n.name.slice(0, 11) + '…' : n.name, n.x, n.y + r + 12);
+      }
+    }
+
+    ctx.restore();
+  }
+
+  function getNodeAt(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    const x = (clientX - rect.left - viewTransform.x) / viewTransform.scale;
+    const y = (clientY - rect.top - viewTransform.y) / viewTransform.scale;
+    for (const n of nodes) {
+      const dx = x - n.x;
+      const dy = y - n.y;
+      if (dx * dx + dy * dy < (n.radius + 5) * (n.radius + 5)) return n;
+    }
+    return null;
+  }
+
+  canvas.addEventListener('mousemove', (e) => {
+    if (dragNode) {
+      const rect = canvas.getBoundingClientRect();
+      dragNode.x = (e.clientX - rect.left - viewTransform.x) / viewTransform.scale;
+      dragNode.y = (e.clientY - rect.top - viewTransform.y) / viewTransform.scale;
+      render();
+      return;
+    }
+    if (isPanning) {
+      viewTransform.x += e.clientX - panStart.x;
+      viewTransform.y += e.clientY - panStart.y;
+      panStart.x = e.clientX;
+      panStart.y = e.clientY;
+      render();
+      return;
+    }
+    const node = getNodeAt(e.clientX, e.clientY);
+    if (node) {
+      hoveredNode = node.id;
+      canvas.style.cursor = 'pointer';
+      const rect = canvas.getBoundingClientRect();
+      tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+      tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+      tooltip.textContent = `${node.name} (${node.type}) — ${node.articleCount} articles`;
+      tooltip.classList.remove('hidden');
+    } else {
+      hoveredNode = null;
+      canvas.style.cursor = 'grab';
+      tooltip.classList.add('hidden');
+    }
+    render();
+  });
+
+  canvas.addEventListener('mousedown', (e) => {
+    const node = getNodeAt(e.clientX, e.clientY);
+    if (node) {
+      dragNode = node;
+      const rect = canvas.getBoundingClientRect();
+      dragOffset.x = (e.clientX - rect.left - viewTransform.x) / viewTransform.scale - node.x;
+      dragOffset.y = (e.clientY - rect.top - viewTransform.y) / viewTransform.scale - node.y;
+    } else {
+      isPanning = true;
+      panStart.x = e.clientX;
+      panStart.y = e.clientY;
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (dragNode) {
+      window.open(`/api/knowledge-graph?entity=${encodeURIComponent(dragNode.id)}`, '_blank');
+      dragNode = null;
+    }
+    isPanning = false;
+  });
+
+  canvas.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    viewTransform.scale *= delta;
+    viewTransform.scale = Math.max(0.1, Math.min(5, viewTransform.scale));
+    render();
+  }, { passive: false });
+
+  document.querySelectorAll('.graph-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.graph-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      fetchGraph(activeFilter);
+    });
+  });
+
+  resize();
+  fetchGraph('all');
+})();
+</script>
+
+<style is:global>
+  .graph-filter.active {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border-color: var(--accent) !important;
+  }
+</style>

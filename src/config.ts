@@ -29,4 +29,5 @@ export const navigation = [
   { title: "Space", url: "/space" },
   { title: "Semiconductors", url: "/semiconductors" },
   { title: "Robotics", url: "/robotics" },
+  { title: "Graph", url: "/knowledge-graph" },
 ];
