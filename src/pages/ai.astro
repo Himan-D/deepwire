@@ -10,18 +10,20 @@ const trendTopics = getTrendTopics();
 
 <BaseLayout title="AI">
   <div class="mb-8">
-    <h1 class="text-4xl font-bold mb-2">Artificial Intelligence</h1>
-    <p class="text-[var(--text-secondary)]">Latest AI developments, model releases, and industry news ({articles.length} articles)</p>
+    <h1 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2">Artificial Intelligence</h1>
+    <p class="text-[var(--text-secondary)] text-sm">Latest AI developments, model releases, and industry news ({articles.length} articles)</p>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
-    <div class="space-y-4">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+    <div class="space-y-3">
       {articles.map((article) => (
         <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
       ))}
     </div>
     <aside class="max-lg:hidden">
-      <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      <div class="sticky top-24">
+        <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      </div>
     </aside>
   </div>
 </BaseLayout>

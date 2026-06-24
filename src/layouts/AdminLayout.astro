@@ -3,28 +3,35 @@ import { siteConfig } from "../config";
 const { title } = Astro.props;
 ---
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} - {siteConfig.name} Admin</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex bg-slate-950 text-slate-100">
-    <aside class="w-60 border-r border-slate-800 p-6">
-      <div class="text-lg font-bold mb-8 text-blue-400">{siteConfig.name} Admin</div>
-      <nav class="flex flex-col gap-1">
-        <a href="/admin" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">Dashboard</a>
-        <a href="/admin/feeds" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">RSS Feeds</a>
-        <a href="/admin/jobs" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">Ingestion Jobs</a>
-        <a href="/admin/trends" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-800">Trends</a>
-        <hr class="border-slate-700 my-4" />
-        <a href="/" class="text-sm text-slate-400 hover:text-blue-400 transition-colors py-1.5 px-3 rounded-lg">Back to Site</a>
-      </nav>
-    </aside>
-    <div class="flex-1 p-8">
-      <slot />
+  <body style="background:#141413;color:#eceae2;font-family:Manrope,system-ui,sans-serif;">
+    <div style="display:flex;min-height:100vh;">
+      <aside style="width:240px;border-right:1px solid #3f3d39;padding:24px;">
+        <div style="font-size:1.125rem;font-weight:700;margin-bottom:32px;background:linear-gradient(135deg,#E85D2A,#f07040);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          {siteConfig.name} Admin
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;">
+          <a href="/admin" style="font-size:0.875rem;color:#8A867C;padding:6px 12px;border-radius:8px;text-decoration:none;">Dashboard</a>
+          <a href="/admin/feeds" style="font-size:0.875rem;color:#8A867C;padding:6px 12px;border-radius:8px;text-decoration:none;">RSS Feeds</a>
+          <a href="/admin/jobs" style="font-size:0.875rem;color:#8A867C;padding:6px 12px;border-radius:8px;text-decoration:none;">Ingestion Jobs</a>
+          <a href="/admin/trends" style="font-size:0.875rem;color:#8A867C;padding:6px 12px;border-radius:8px;text-decoration:none;">Trends</a>
+          <hr style="border-color:#3f3d39;margin:16px 0;" />
+          <a href="/" style="font-size:0.875rem;color:#8A867C;padding:6px 12px;border-radius:8px;text-decoration:none;">Back to Site</a>
+        </nav>
+      </aside>
+      <main style="flex:1;padding:32px;">
+        <slot />
+      </main>
     </div>
   </body>
 </html>

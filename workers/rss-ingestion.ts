@@ -1,6 +1,7 @@
 import { parseFeed } from "../src/lib/rss/parser";
 import { defaultSources } from "../src/lib/rss/sources";
-import { classifyArticle, getPrimaryCategory } from "../src/lib/ai/classify";
+import { classifyArticle, getPrimaryCategory, categoryMapping } from "../src/lib/ai/classify";
+import { crawlArticle } from "../src/lib/content-crawler";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -73,17 +74,23 @@ async function ingestSource(source: { name: string; feedUrl: string; category: s
     for (const item of items) {
       if (existingUrls.has(item.url)) continue;
 
-      const categories = classifyArticle(item.title, item.content);
-      const primaryCategory = getPrimaryCategory(item.title, item.content, source.name);
+      const title = item.title?.trim();
+      const content = item.content?.trim();
+      if (!title || title.length < 5) continue;
+      if (!content || content.length < 10) continue;
+
+      const categories = classifyArticle(title, content);
+      const rawCategory = getPrimaryCategory(title, content, source.name);
+      const primaryCategory = categoryMapping[rawCategory] || rawCategory;
 
       const article: StoredArticle = {
         id: nextId++,
-        title: item.title,
+        title,
         url: item.url,
         source: source.name,
         author: item.author,
         excerpt: item.excerpt.slice(0, 300),
-        content: item.content.slice(0, 10000),
+        content: content.slice(0, 10000),
         category: primaryCategory,
         tags: categories,
         publicationDate: item.publicationDate.toISOString(),
@@ -97,6 +104,18 @@ async function ingestSource(source: { name: string; feedUrl: string; category: s
       existingArticles.push(article);
       existingUrls.add(item.url);
       newCount++;
+
+      const skipCrawl = source.name.includes("@X") || source.name === "Hacker News" || source.name.startsWith("arXiv");
+      if (!skipCrawl && item.url.startsWith("http")) {
+        const crawled = await crawlArticle(item.url);
+        if (crawled) {
+          if (crawled.content.length > article.content.length) article.content = crawled.content;
+          if (crawled.excerpt.length > article.excerpt.length) article.excerpt = crawled.excerpt.slice(0, 300);
+          if (crawled.imageUrl && !article.imageUrl) article.imageUrl = crawled.imageUrl;
+        }
+        article.processed = true;
+        await new Promise((r) => setTimeout(r, 1500));
+      }
     }
 
     console.log(`[${source.name}] Found ${items.length} items, ${newCount} new`);

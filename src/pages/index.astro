@@ -1,8 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config";
 import HeroSection from "../components/news/HeroSection.astro";
 import NewsCard from "../components/news/NewsCard.astro";
 import TrendingTopics from "../components/news/TrendingTopics.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { categories } from "../config";
 import { getTopStories, getTrendingArticles, getArticlesByCategory, getTrendTopics } from "../lib/data";
 
@@ -30,11 +31,11 @@ const trendTopics = getTrendTopics();
     imageUrl: a.imageUrl,
   }))} />
 
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
     <div>
       <section class="mb-10">
-        <h2 class="section-header">Top Stories</h2>
-        <div class="space-y-4">
+        <h2 class="text-sm font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-5">Top Stories</h2>
+        <div class="space-y-3">
           {topStories.slice(0, 8).map((article) => (
             <NewsCard
               id={article.id}
@@ -54,11 +55,11 @@ const trendTopics = getTrendTopics();
 
       {aiArticles.length > 0 && (
         <section class="mb-10">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="section-header mb-0">AI</h2>
-            <a href="/ai" class="text-sm text-[var(--accent)] hover:underline">View all →</a>
+          <div class="flex items-center justify-between mb-5">
+            <h2 class="text-sm font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-0">AI</h2>
+            <a href="/ai" class="text-xs font-medium text-[var(--accent)] hover:underline">View all &rarr;</a>
           </div>
-          <div class="space-y-4">
+          <div class="space-y-3">
             {aiArticles.map((article) => (
               <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
             ))}
@@ -68,11 +69,11 @@ const trendTopics = getTrendTopics();
 
       {researchArticles.length > 0 && (
         <section class="mb-10">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="section-header mb-0">Research</h2>
-            <a href="/research" class="text-sm text-[var(--accent)] hover:underline">View all →</a>
+          <div class="flex items-center justify-between mb-5">
+            <h2 class="text-sm font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-0">Research</h2>
+            <a href="/research" class="text-xs font-medium text-[var(--accent)] hover:underline">View all &rarr;</a>
           </div>
-          <div class="space-y-4">
+          <div class="space-y-3">
             {researchArticles.slice(0, 3).map((article) => (
               <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
             ))}
@@ -82,11 +83,11 @@ const trendTopics = getTrendTopics();
 
       {startupArticles.length > 0 && (
         <section class="mb-10">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="section-header mb-0">Startups</h2>
-            <a href="/startups" class="text-sm text-[var(--accent)] hover:underline">View all →</a>
+          <div class="flex items-center justify-between mb-5">
+            <h2 class="text-sm font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-0">Startups</h2>
+            <a href="/startups" class="text-xs font-medium text-[var(--accent)] hover:underline">View all &rarr;</a>
           </div>
-          <div class="space-y-4">
+          <div class="space-y-3">
             {startupArticles.slice(0, 3).map((article) => (
               <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
             ))}
@@ -94,7 +95,7 @@ const trendTopics = getTrendTopics();
         </section>
       )}
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         {categories.filter(c => ["security", "space", "semiconductors", "robotics"].includes(c.id)).map((cat) => {
           const count = {
             security: securityArticles.length,
@@ -103,10 +104,9 @@ const trendTopics = getTrendTopics();
             robotics: roboticsArticles.length,
           }[cat.id] || 0;
           return (
-            <a href={`/${cat.id}`} class="news-card p-6 text-center hover:border-[var(--accent)] transition-colors">
-              <div class="text-3xl mb-2">{cat.icon}</div>
-              <h3 class="font-bold text-lg">{cat.label}</h3>
-              <p class="text-sm text-[var(--text-secondary)]">{count} articles</p>
+            <a href={`/${cat.id}`} class="news-card p-6 text-center block hover:border-[var(--accent)] transition-colors">
+              <h3 class="font-semibold text-base">{cat.label}</h3>
+              <p class="text-xs text-[var(--text-tertiary)] mt-1">{count} articles</p>
             </a>
           );
         })}
@@ -114,7 +114,9 @@ const trendTopics = getTrendTopics();
     </div>
 
     <aside class="max-lg:hidden">
-      <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      <div class="sticky top-24">
+        <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      </div>
     </aside>
   </div>
 </BaseLayout>

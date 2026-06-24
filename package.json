@@ -14,6 +14,8 @@
     "db:push": "drizzle-kit push",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
+    "db:init": "tsx workers/db-migrate.ts",
+    "backfill": "tsx workers/backfill.ts",
     "ingest": "tsx workers/rss-ingestion.ts",
     "process": "tsx workers/article-processing.ts",
     "cluster": "tsx workers/clustering.ts",
@@ -21,15 +23,19 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.6",
+    "better-sqlite3": "^12.11.1",
+    "cheerio": "^1.0.0",
     "drizzle-orm": "^0.43.0",
+    "jsdom": "^29.1.1",
     "openai": "^4.95.0",
     "rss-parser": "^3.13.0",
-    "tailwindcss": "^4.3.0",
-    "@tailwindcss/vite": "^4.3.0",
-    "cheerio": "^1.0.0"
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "drizzle-kit": "^0.30.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"

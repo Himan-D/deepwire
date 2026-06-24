@@ -8,11 +8,11 @@ const articles = getArticlesByCategory("security", 50);
 
 <BaseLayout title="Security">
   <div class="mb-8">
-    <h1 class="text-4xl font-bold mb-2">Cybersecurity</h1>
-    <p class="text-[var(--text-secondary)]">Security alerts, vulnerabilities, and threat intelligence</p>
+    <h1 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2">Security</h1>
+    <p class="text-[var(--text-secondary)] text-sm">Security alerts, vulnerabilities, and threat intelligence</p>
   </div>
 
-  <div class="space-y-4">
+  <div class="space-y-3">
     {articles.map((article) => (
       <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
     ))}

@@ -1,33 +1,36 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/news/NewsCard.astro";
-import { getArticlesByCategory } from "../lib/data";
+import TrendingTopics from "../components/news/TrendingTopics.astro";
+import { getArticlesByCategory, getTrendTopics } from "../lib/data";
 
 const articles = getArticlesByCategory("research", 50);
+const trendTopics = getTrendTopics();
 ---
 
 <BaseLayout title="Research">
   <div class="mb-8">
-    <h1 class="text-4xl font-bold mb-2">Research</h1>
-    <p class="text-[var(--text-secondary)]">Important research papers and scientific breakthroughs ({articles.length} papers)</p>
+    <h1 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2">Research</h1>
+    <p class="text-[var(--text-secondary)] text-sm">Important research papers and breakthroughs ({articles.length} papers)</p>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
-    <div class="space-y-4">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+    <div class="space-y-3">
       {articles.map((article) => (
         <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
       ))}
     </div>
     <aside class="max-lg:hidden space-y-6">
-      <div class="bg-[var(--bg-card)] border border-[var(--border)] rounded-xl p-6">
-        <h3 class="font-bold mb-3">Quick Links</h3>
+      <div class="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-5">
+        <h3 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-4">Links</h3>
         <div class="space-y-2">
-          <a href="https://arxiv.org/list/cs.AI/recent" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">arXiv AI →</a>
-          <a href="https://arxiv.org/list/cs.LG/recent" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">arXiv ML →</a>
-          <a href="https://paperswithcode.com" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Papers With Code →</a>
-          <a href="https://www.science.org" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Science →</a>
+          <a href="https://arxiv.org/list/cs.AI/recent" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">arXiv AI &rarr;</a>
+          <a href="https://arxiv.org/list/cs.LG/recent" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">arXiv ML &rarr;</a>
+          <a href="https://paperswithcode.com" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Papers With Code &rarr;</a>
+          <a href="https://www.science.org" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Science &rarr;</a>
         </div>
       </div>
+      <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
     </aside>
   </div>
 </BaseLayout>

@@ -11,8 +11,8 @@ const allArticles = getAllArticles();
 
 <BaseLayout title="Trending">
   <div class="mb-8">
-    <h1 class="text-4xl font-bold mb-2">Trending Topics</h1>
-    <p class="text-[var(--text-secondary)]">Most discussed topics in AI and DeepTech ({allArticles.length} total articles)</p>
+    <h1 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2">Trending</h1>
+    <p class="text-[var(--text-secondary)] text-sm">Most discussed topics in AI and DeepTech ({allArticles.length} articles)</p>
   </div>
 
   <div class="flex flex-wrap gap-2 mb-8">
@@ -27,14 +27,16 @@ const allArticles = getAllArticles();
     ))}
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
-    <div class="space-y-4">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+    <div class="space-y-3">
       {topArticles.map((article) => (
         <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
       ))}
     </div>
     <aside class="max-lg:hidden">
-      <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      <div class="sticky top-24">
+        <TrendingTopics trends={trendTopics.slice(0, 10)} period="trending" />
+      </div>
     </aside>
   </div>
 </BaseLayout>

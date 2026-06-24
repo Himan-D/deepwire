@@ -28,11 +28,11 @@ const companyArticles = articles.filter((a) =>
 
 <BaseLayout title={name}>
   <div class="mb-8">
-    <h1 class="text-4xl font-bold mb-2">{name}</h1>
-    <p class="text-[var(--text-secondary)]">{companyArticles.length} articles mentioning {name}</p>
+    <h1 class="text-xs font-semibold tracking-wide uppercase text-[var(--text-tertiary)] mb-2">Company</h1>
+    <p class="text-[var(--text-secondary)] text-sm">{companyArticles.length} articles mentioning {name}</p>
   </div>
 
-  <div class="space-y-4">
+  <div class="space-y-3">
     {companyArticles.map((article) => (
       <NewsCard {...article} publicationDate={new Date(article.publicationDate)} />
     ))}

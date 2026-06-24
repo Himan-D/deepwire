@@ -1,0 +1,77 @@
+name: RSS Ingestion
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/lib/rss/sources.ts"
+      - "workers/rss-ingestion.ts"
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Init SQLite DB
+        run: npm run db:init
+
+      - name: Run RSS ingestion
+        run: npm run ingest
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git add -A
+          git diff --staged --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated articles
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "deepwire-bot"
+          git config user.email "bot@deepwire.ai"
+          git commit -m "chore: :robot: auto-ingest RSS articles"
+          git push
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+  crawl:
+    needs: ingest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Crawl full article content
+        run: npm run process
+
+      - name: Commit crawled content
+        run: |
+          git add -A
+          git diff --staged --quiet || (git config user.name "deepwire-bot" && git config user.email "bot@deepwire.ai" && git commit -m "chore: :robot: crawl full article content" && git push)
