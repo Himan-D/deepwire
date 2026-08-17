@@ -105,6 +105,7 @@ jobs:
           git diff --staged --quiet || (git commit -m "chore: :robot: update analysis (clusters, trends, KG)" && git pull --rebase origin main && git push)
 
   backfill:
+    needs: [analyze]
     if: github.event.schedule == '0 6 * * *' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
