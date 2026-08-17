@@ -44,7 +44,7 @@ jobs:
           git config user.name "deepwire-bot"
           git config user.email "bot@deepwire.ai"
           git commit -m "chore: :robot: auto-ingest RSS articles"
-          git push
+          git pull --rebase origin main && git push
 
       - name: Build site
         run: npm run build
@@ -67,8 +67,10 @@ jobs:
 
       - name: Commit crawled content
         run: |
+          git config user.name "deepwire-bot"
+          git config user.email "bot@deepwire.ai"
           git add -A
-          git diff --staged --quiet || (git config user.name "deepwire-bot" && git config user.email "bot@deepwire.ai" && git commit -m "chore: :robot: crawl full article content" && git push&& git push git pull --rebase origin main && git push)
+          git diff --staged --quiet || (git commit -m "chore: :robot: update" && git pull --rebase origin main && git push)
 
   analyze:
     needs: crawl
@@ -97,8 +99,10 @@ jobs:
 
       - name: Commit analysis
         run: |
+          git config user.name "deepwire-bot"
+          git config user.email "bot@deepwire.ai"
           git add -A
-          git diff --staged --quiet || (git config user.name "deepwire-bot" && git config user.email "bot@deepwire.ai" && git commit -m "chore: :robot: update analysis (clusters, trends, KG)" && git push&& git push git pull --rebase origin main && git push)
+          git diff --staged --quiet || (git commit -m "chore: :robot: update analysis (clusters, trends, KG)" && git pull --rebase origin main && git push)
 
   backfill:
     if: github.event.schedule == '0 6 * * *' || github.event_name == 'workflow_dispatch'
@@ -121,5 +125,7 @@ jobs:
 
       - name: Commit backfilled articles
         run: |
+          git config user.name "deepwire-bot"
+          git config user.email "bot@deepwire.ai"
           git add -A
-          git diff --staged --quiet || (git config user.name "deepwire-bot" && git config user.email "bot@deepwire.ai" && git commit -m "chore: :robot: daily backfill" && git push&& git push git pull --rebase origin main && git push)
+          git diff --staged --quiet || (git commit -m "chore: :robot: daily backfill" && git pull --rebase origin main && git push)
