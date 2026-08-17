@@ -30,10 +30,10 @@
   "dependencies": {
     "@mozilla/readability": "^0.6.0",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.6",
+    "astro": "^7.1.1",
     "better-sqlite3": "^12.11.1",
     "cheerio": "^1.0.0",
-    "drizzle-orm": "^0.43.0",
+    "drizzle-orm": "^0.45.2",
     "jsdom": "^29.1.1",
     "openai": "^4.95.0",
     "rss-parser": "^3.13.0",
