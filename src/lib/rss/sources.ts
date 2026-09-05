@@ -48,6 +48,7 @@ export const defaultSources: RSSSource[] = [
   { name: "Unite AI", feedUrl: "https://www.unite.ai/feed/", url: "https://www.unite.ai", category: "ai", authority: 5 },
   { name: "MarkTechPost", feedUrl: "https://www.marktechpost.com/feed/", url: "https://www.marktechpost.com", category: "ai", authority: 5 },
   { name: "Last Week in AI", feedUrl: "https://lastweekin.ai/feed", url: "https://lastweekin.ai", category: "ai", authority: 6 },
+  { name: "AI Weekly", feedUrl: "https://aiweekly.co/feed", url: "https://aiweekly.co", category: "ai", authority: 7 },
   { name: "AI News", feedUrl: "https://www.artificialintelligence-news.com/rss", url: "https://www.artificialintelligence-news.com", category: "ai", authority: 5 },
   { name: "Analytics Vidhya", feedUrl: "https://www.analyticsvidhya.com/blog/feed", url: "https://www.analyticsvidhya.com", category: "ai", authority: 5 },
   { name: "Medium AI", feedUrl: "https://medium.com/feed/tag/artificial-intelligence", url: "https://medium.com/tag/artificial-intelligence", category: "ai", authority: 5 },
